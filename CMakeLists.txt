@@ -14,7 +14,7 @@ set(BUILD_SHARED_LIBS YES)
 add_library(comm_lib INTERFACE)
 
 target_link_libraries(comm_lib INTERFACE
-msgs_lib
+raptor_msgs
 fastdds_lib
 )
 
