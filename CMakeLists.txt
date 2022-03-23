@@ -18,7 +18,7 @@ msgs_lib
 fastdds_lib
 )
 
-add_subdirectory(msgs_lib)
+add_subdirectory(raptor_msgs)
 add_subdirectory(fastdds_lib)
 
 # if (BUILD_DOC)

@@ -1,0 +1,3 @@
+[submodule "raptor_msgs"]
+	path = raptor_msgs
+	url = https://github.com/raptor-ethz/raptor_msgs.git
