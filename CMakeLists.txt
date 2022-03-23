@@ -25,8 +25,6 @@ add_subdirectory(fastdds_lib)
 # add_subdirectory(docs)
 # endif (BUILD_DOC)
 
-add_subdirectory(demo)
-
 # For library installation
 if(NOT WIN32 AND CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR) 
     set(CMAKE_INSTALL_PREFIX "/opt/raptor/comm_lib")

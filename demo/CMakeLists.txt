@@ -1,4 +1,0 @@
-
-add_subdirectory(simple_subscriber)
-add_subdirectory(simple_publisher)
-add_subdirectory(publisher_async)
