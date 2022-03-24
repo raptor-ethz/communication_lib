@@ -36,15 +36,18 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Header_msg::Header_msg()
 {
-    // m_timestamp com.eprosima.idl.parser.typecode.PrimitiveTypeCode@13eb8acf
+    // m_timestamp com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1cab0bfb
     m_timestamp = 0;
-    // m_id com.eprosima.idl.parser.typecode.StringTypeCode@43738a82
-    m_id ="";
+    // m_id com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2473b9ce
+    m_id = 0;
+    // m_description com.eprosima.idl.parser.typecode.StringTypeCode@60438a68
+    m_description ="";
 
 }
 
 idl_msg::Header_msg::~Header_msg()
 {
+
 
 
 }
@@ -54,13 +57,15 @@ idl_msg::Header_msg::Header_msg(
 {
     m_timestamp = x.m_timestamp;
     m_id = x.m_id;
+    m_description = x.m_description;
 }
 
 idl_msg::Header_msg::Header_msg(
         Header_msg&& x)
 {
     m_timestamp = x.m_timestamp;
-    m_id = std::move(x.m_id);
+    m_id = x.m_id;
+    m_description = std::move(x.m_description);
 }
 
 idl_msg::Header_msg& idl_msg::Header_msg::operator =(
@@ -69,6 +74,7 @@ idl_msg::Header_msg& idl_msg::Header_msg::operator =(
 
     m_timestamp = x.m_timestamp;
     m_id = x.m_id;
+    m_description = x.m_description;
 
     return *this;
 }
@@ -78,7 +84,8 @@ idl_msg::Header_msg& idl_msg::Header_msg::operator =(
 {
 
     m_timestamp = x.m_timestamp;
-    m_id = std::move(x.m_id);
+    m_id = x.m_id;
+    m_description = std::move(x.m_description);
 
     return *this;
 }
@@ -87,7 +94,7 @@ bool idl_msg::Header_msg::operator ==(
         const Header_msg& x)
 {
 
-    return (m_timestamp == x.m_timestamp && m_id == x.m_id);
+    return (m_timestamp == x.m_timestamp && m_id == x.m_id && m_description == x.m_description);
 }
 
 bool idl_msg::Header_msg::operator !=(
@@ -100,6 +107,9 @@ size_t idl_msg::Header_msg::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
+
+
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -122,7 +132,10 @@ size_t idl_msg::Header_msg::getCdrSerializedSize(
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
-    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4) + data.id().size() + 1;
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4) + data.description().size() + 1;
 
 
     return current_alignment - initial_alignment;
@@ -134,6 +147,7 @@ void idl_msg::Header_msg::serialize(
 
     scdr << m_timestamp;
     scdr << m_id;
+    scdr << m_description;
 
 }
 
@@ -143,6 +157,7 @@ void idl_msg::Header_msg::deserialize(
 
     dcdr >> m_timestamp;
     dcdr >> m_id;
+    dcdr >> m_description;
 }
 
 /*!
@@ -174,30 +189,20 @@ int32_t& idl_msg::Header_msg::timestamp()
 }
 
 /*!
- * @brief This function copies the value in member id
- * @param _id New value to be copied in member id
+ * @brief This function sets a value in member id
+ * @param _id New value for member id
  */
 void idl_msg::Header_msg::id(
-        const std::string& _id)
+        int32_t _id)
 {
     m_id = _id;
 }
 
 /*!
- * @brief This function moves the value in member id
- * @param _id New value to be moved in member id
+ * @brief This function returns the value of member id
+ * @return Value of member id
  */
-void idl_msg::Header_msg::id(
-        std::string&& _id)
-{
-    m_id = std::move(_id);
-}
-
-/*!
- * @brief This function returns a constant reference to member id
- * @return Constant reference to member id
- */
-const std::string& idl_msg::Header_msg::id() const
+int32_t idl_msg::Header_msg::id() const
 {
     return m_id;
 }
@@ -206,15 +211,54 @@ const std::string& idl_msg::Header_msg::id() const
  * @brief This function returns a reference to member id
  * @return Reference to member id
  */
-std::string& idl_msg::Header_msg::id()
+int32_t& idl_msg::Header_msg::id()
 {
     return m_id;
+}
+
+/*!
+ * @brief This function copies the value in member description
+ * @param _description New value to be copied in member description
+ */
+void idl_msg::Header_msg::description(
+        const std::string& _description)
+{
+    m_description = _description;
+}
+
+/*!
+ * @brief This function moves the value in member description
+ * @param _description New value to be moved in member description
+ */
+void idl_msg::Header_msg::description(
+        std::string&& _description)
+{
+    m_description = std::move(_description);
+}
+
+/*!
+ * @brief This function returns a constant reference to member description
+ * @return Constant reference to member description
+ */
+const std::string& idl_msg::Header_msg::description() const
+{
+    return m_description;
+}
+
+/*!
+ * @brief This function returns a reference to member description
+ * @return Reference to member description
+ */
+std::string& idl_msg::Header_msg::description()
+{
+    return m_description;
 }
 
 size_t idl_msg::Header_msg::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -232,6 +276,6 @@ void idl_msg::Header_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-      
+       
 }
 

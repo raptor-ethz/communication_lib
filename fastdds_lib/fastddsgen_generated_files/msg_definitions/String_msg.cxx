@@ -36,7 +36,7 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::String_msg::String_msg()
 {
-    // m_data com.eprosima.idl.parser.typecode.StringTypeCode@e720b71
+    // m_data com.eprosima.idl.parser.typecode.StringTypeCode@3aefe5e5
     m_data ="";
 
 }

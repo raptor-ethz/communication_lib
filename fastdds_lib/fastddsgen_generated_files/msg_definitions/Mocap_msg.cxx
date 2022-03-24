@@ -36,13 +36,13 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Mocap_msg::Mocap_msg()
 {
-    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@40f08448
+    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@2c34f934
 
-    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@276438c9
+    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@12d3a4e9
 
-    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@588df31b
+    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@240237d2
 
-    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@33b37288
+    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@25a65b77
     m_latency = 0.0;
 
 }
@@ -117,7 +117,7 @@ size_t idl_msg::Mocap_msg::getMaxCdrSerializedSize(
 
 
     current_alignment += idl_msg::Header_msg::getMaxCdrSerializedSize(current_alignment);
-    current_alignment += idl_msg::Position_msg::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += idl_msg::Vector3f_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += idl_msg::Euler_angle::getMaxCdrSerializedSize(current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
@@ -135,7 +135,7 @@ size_t idl_msg::Mocap_msg::getCdrSerializedSize(
 
 
     current_alignment += idl_msg::Header_msg::getCdrSerializedSize(data.header(), current_alignment);
-    current_alignment += idl_msg::Position_msg::getCdrSerializedSize(data.position(), current_alignment);
+    current_alignment += idl_msg::Vector3f_msg::getCdrSerializedSize(data.position(), current_alignment);
     current_alignment += idl_msg::Euler_angle::getCdrSerializedSize(data.orientation(), current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
@@ -207,7 +207,7 @@ idl_msg::Header_msg& idl_msg::Mocap_msg::header()
  * @param _position New value to be copied in member position
  */
 void idl_msg::Mocap_msg::position(
-        const idl_msg::Position_msg& _position)
+        const idl_msg::Vector3f_msg& _position)
 {
     m_position = _position;
 }
@@ -217,7 +217,7 @@ void idl_msg::Mocap_msg::position(
  * @param _position New value to be moved in member position
  */
 void idl_msg::Mocap_msg::position(
-        idl_msg::Position_msg&& _position)
+        idl_msg::Vector3f_msg&& _position)
 {
     m_position = std::move(_position);
 }
@@ -226,7 +226,7 @@ void idl_msg::Mocap_msg::position(
  * @brief This function returns a constant reference to member position
  * @return Constant reference to member position
  */
-const idl_msg::Position_msg& idl_msg::Mocap_msg::position() const
+const idl_msg::Vector3f_msg& idl_msg::Mocap_msg::position() const
 {
     return m_position;
 }
@@ -235,7 +235,7 @@ const idl_msg::Position_msg& idl_msg::Mocap_msg::position() const
  * @brief This function returns a reference to member position
  * @return Reference to member position
  */
-idl_msg::Position_msg& idl_msg::Mocap_msg::position()
+idl_msg::Vector3f_msg& idl_msg::Mocap_msg::position()
 {
     return m_position;
 }

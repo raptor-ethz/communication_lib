@@ -36,9 +36,9 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg()
 {
-    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37374a5e
+    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49c386c8
     m_front_arm_deg = 0.0;
-    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6950e31
+    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@56528192
     m_back_arm_deg = 0.0;
 
 }

@@ -23,7 +23,7 @@
 #define _IDL_MSG_MOCAP_MSG_H_
 
 #include "Euler_angle_msg.h"
-#include "Position_msg.h"
+#include "Vector3f_msg.h"
 #include "Header_msg.h"
 
 #include <stdint.h>
@@ -155,26 +155,26 @@ namespace idl_msg {
          * @param _position New value to be copied in member position
          */
         eProsima_user_DllExport void position(
-                const idl_msg::Position_msg& _position);
+                const idl_msg::Vector3f_msg& _position);
 
         /*!
          * @brief This function moves the value in member position
          * @param _position New value to be moved in member position
          */
         eProsima_user_DllExport void position(
-                idl_msg::Position_msg&& _position);
+                idl_msg::Vector3f_msg&& _position);
 
         /*!
          * @brief This function returns a constant reference to member position
          * @return Constant reference to member position
          */
-        eProsima_user_DllExport const idl_msg::Position_msg& position() const;
+        eProsima_user_DllExport const idl_msg::Vector3f_msg& position() const;
 
         /*!
          * @brief This function returns a reference to member position
          * @return Reference to member position
          */
-        eProsima_user_DllExport idl_msg::Position_msg& position();
+        eProsima_user_DllExport idl_msg::Vector3f_msg& position();
         /*!
          * @brief This function copies the value in member orientation
          * @param _orientation New value to be copied in member orientation
@@ -280,7 +280,7 @@ namespace idl_msg {
     private:
 
         idl_msg::Header_msg m_header;
-        idl_msg::Position_msg m_position;
+        idl_msg::Vector3f_msg m_position;
         idl_msg::Euler_angle m_orientation;
         float m_latency;
     };
