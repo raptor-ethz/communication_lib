@@ -35,18 +35,18 @@
 namespace idl_msg
 {
     /*!
-     * @brief This class represents the TopicDataType of the type Vector3f_msg defined by the user in the IDL file.
+     * @brief This class represents the TopicDataType of the type Vector3i_msg defined by the user in the IDL file.
      * @ingroup VECTOR3I_MSG
      */
-    class Vector3f_msgPubSubType : public eprosima::fastdds::dds::TopicDataType
+    class Vector3i_msgPubSubType : public eprosima::fastdds::dds::TopicDataType
     {
     public:
 
-        typedef Vector3f_msg type;
+        typedef Vector3i_msg type;
 
-        eProsima_user_DllExport Vector3f_msgPubSubType();
+        eProsima_user_DllExport Vector3i_msgPubSubType();
 
-        eProsima_user_DllExport virtual ~Vector3f_msgPubSubType();
+        eProsima_user_DllExport virtual ~Vector3i_msgPubSubType();
 
         eProsima_user_DllExport virtual bool serialize(
                 void* data,
@@ -89,7 +89,7 @@ namespace idl_msg
         eProsima_user_DllExport inline bool construct_sample(
                 void* memory) const override
         {
-            new (memory) Vector3f_msg();
+            new (memory) Vector3i_msg();
             return true;
         }
 

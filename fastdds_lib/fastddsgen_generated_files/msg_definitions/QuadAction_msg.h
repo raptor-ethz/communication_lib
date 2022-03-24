@@ -61,20 +61,20 @@ class Cdr;
 } // namespace eprosima
 
 
-/*!
- * @brief This class represents the enumeration Action defined by the user in the IDL file.
- * @ingroup QUADACTION_MSG
- */
-enum Action : uint32_t
-{
-    status,
-    arm,
-    disarm,
-    takeoff,
-    land,
-    offboard
-};
 namespace idl_msg {
+    /*!
+     * @brief This class represents the enumeration Action_cmd defined by the user in the IDL file.
+     * @ingroup QUADACTION_MSG
+     */
+    enum Action_cmd : uint32_t
+    {
+        status,
+        arm,
+        disarm,
+        takeoff,
+        land,
+        offboard
+    };
     /*!
      * @brief This class represents the structure QuadAction_msg defined by the user in the IDL file.
      * @ingroup QUADACTION_MSG
@@ -140,19 +140,19 @@ namespace idl_msg {
          * @param _action New value for member action
          */
         eProsima_user_DllExport void action(
-                Action _action);
+                idl_msg::Action_cmd _action);
 
         /*!
          * @brief This function returns the value of member action
          * @return Value of member action
          */
-        eProsima_user_DllExport Action action() const;
+        eProsima_user_DllExport idl_msg::Action_cmd action() const;
 
         /*!
          * @brief This function returns a reference to member action
          * @return Reference to member action
          */
-        eProsima_user_DllExport Action& action();
+        eProsima_user_DllExport idl_msg::Action_cmd& action();
 
 
         /*!
@@ -214,7 +214,7 @@ namespace idl_msg {
 
     private:
 
-        Action m_action;
+        idl_msg::Action_cmd m_action;
     };
 } // namespace idl_msg
 

@@ -28,8 +28,8 @@
 using SerializedPayload_t = eprosima::fastrtps::rtps::SerializedPayload_t;
 using InstanceHandle_t = eprosima::fastrtps::rtps::InstanceHandle_t;
 
-
 namespace idl_msg {
+
     QuadAction_msgPubSubType::QuadAction_msgPubSubType()
     {
         setName("idl_msg::QuadAction_msg");

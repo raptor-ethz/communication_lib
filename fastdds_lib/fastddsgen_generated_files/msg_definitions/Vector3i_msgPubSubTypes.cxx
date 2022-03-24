@@ -29,20 +29,20 @@ using SerializedPayload_t = eprosima::fastrtps::rtps::SerializedPayload_t;
 using InstanceHandle_t = eprosima::fastrtps::rtps::InstanceHandle_t;
 
 namespace idl_msg {
-    Vector3f_msgPubSubType::Vector3f_msgPubSubType()
+    Vector3i_msgPubSubType::Vector3i_msgPubSubType()
     {
-        setName("idl_msg::Vector3f_msg");
-        auto type_size = Vector3f_msg::getMaxCdrSerializedSize();
+        setName("idl_msg::Vector3i_msg");
+        auto type_size = Vector3i_msg::getMaxCdrSerializedSize();
         type_size += eprosima::fastcdr::Cdr::alignment(type_size, 4); /* possible submessage alignment */
         m_typeSize = static_cast<uint32_t>(type_size) + 4; /*encapsulation*/
-        m_isGetKeyDefined = Vector3f_msg::isKeyDefined();
-        size_t keyLength = Vector3f_msg::getKeyMaxCdrSerializedSize() > 16 ?
-                Vector3f_msg::getKeyMaxCdrSerializedSize() : 16;
+        m_isGetKeyDefined = Vector3i_msg::isKeyDefined();
+        size_t keyLength = Vector3i_msg::getKeyMaxCdrSerializedSize() > 16 ?
+                Vector3i_msg::getKeyMaxCdrSerializedSize() : 16;
         m_keyBuffer = reinterpret_cast<unsigned char*>(malloc(keyLength));
         memset(m_keyBuffer, 0, keyLength);
     }
 
-    Vector3f_msgPubSubType::~Vector3f_msgPubSubType()
+    Vector3i_msgPubSubType::~Vector3i_msgPubSubType()
     {
         if (m_keyBuffer != nullptr)
         {
@@ -50,11 +50,11 @@ namespace idl_msg {
         }
     }
 
-    bool Vector3f_msgPubSubType::serialize(
+    bool Vector3i_msgPubSubType::serialize(
             void* data,
             SerializedPayload_t* payload)
     {
-        Vector3f_msg* p_type = static_cast<Vector3f_msg*>(data);
+        Vector3i_msg* p_type = static_cast<Vector3i_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(payload->data), payload->max_size);
@@ -79,12 +79,12 @@ namespace idl_msg {
         return true;
     }
 
-    bool Vector3f_msgPubSubType::deserialize(
+    bool Vector3i_msgPubSubType::deserialize(
             SerializedPayload_t* payload,
             void* data)
     {
         //Convert DATA to pointer of your type
-        Vector3f_msg* p_type = static_cast<Vector3f_msg*>(data);
+        Vector3i_msg* p_type = static_cast<Vector3i_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(payload->data), payload->length);
@@ -109,28 +109,28 @@ namespace idl_msg {
         return true;
     }
 
-    std::function<uint32_t()> Vector3f_msgPubSubType::getSerializedSizeProvider(
+    std::function<uint32_t()> Vector3i_msgPubSubType::getSerializedSizeProvider(
             void* data)
     {
         return [data]() -> uint32_t
                {
-                   return static_cast<uint32_t>(type::getCdrSerializedSize(*static_cast<Vector3f_msg*>(data))) +
+                   return static_cast<uint32_t>(type::getCdrSerializedSize(*static_cast<Vector3i_msg*>(data))) +
                           4u /*encapsulation*/;
                };
     }
 
-    void* Vector3f_msgPubSubType::createData()
+    void* Vector3i_msgPubSubType::createData()
     {
-        return reinterpret_cast<void*>(new Vector3f_msg());
+        return reinterpret_cast<void*>(new Vector3i_msg());
     }
 
-    void Vector3f_msgPubSubType::deleteData(
+    void Vector3i_msgPubSubType::deleteData(
             void* data)
     {
-        delete(reinterpret_cast<Vector3f_msg*>(data));
+        delete(reinterpret_cast<Vector3i_msg*>(data));
     }
 
-    bool Vector3f_msgPubSubType::getKey(
+    bool Vector3i_msgPubSubType::getKey(
             void* data,
             InstanceHandle_t* handle,
             bool force_md5)
@@ -140,16 +140,16 @@ namespace idl_msg {
             return false;
         }
 
-        Vector3f_msg* p_type = static_cast<Vector3f_msg*>(data);
+        Vector3i_msg* p_type = static_cast<Vector3i_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(m_keyBuffer),
-                Vector3f_msg::getKeyMaxCdrSerializedSize());
+                Vector3i_msg::getKeyMaxCdrSerializedSize());
 
         // Object that serializes the data.
         eprosima::fastcdr::Cdr ser(fastbuffer, eprosima::fastcdr::Cdr::BIG_ENDIANNESS);
         p_type->serializeKey(ser);
-        if (force_md5 || Vector3f_msg::getKeyMaxCdrSerializedSize() > 16)
+        if (force_md5 || Vector3i_msg::getKeyMaxCdrSerializedSize() > 16)
         {
             m_md5.init();
             m_md5.update(m_keyBuffer, static_cast<unsigned int>(ser.getSerializedDataLength()));

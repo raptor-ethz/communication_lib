@@ -63,64 +63,64 @@ class Cdr;
 
 namespace idl_msg {
     /*!
-     * @brief This class represents the structure Vector3f_msg defined by the user in the IDL file.
+     * @brief This class represents the structure Vector3i_msg defined by the user in the IDL file.
      * @ingroup VECTOR3I_MSG
      */
-    class Vector3f_msg
+    class Vector3i_msg
     {
     public:
 
         /*!
          * @brief Default constructor.
          */
-        eProsima_user_DllExport Vector3f_msg();
+        eProsima_user_DllExport Vector3i_msg();
 
         /*!
          * @brief Default destructor.
          */
-        eProsima_user_DllExport ~Vector3f_msg();
+        eProsima_user_DllExport ~Vector3i_msg();
 
         /*!
          * @brief Copy constructor.
-         * @param x Reference to the object idl_msg::Vector3f_msg that will be copied.
+         * @param x Reference to the object idl_msg::Vector3i_msg that will be copied.
          */
-        eProsima_user_DllExport Vector3f_msg(
-                const Vector3f_msg& x);
+        eProsima_user_DllExport Vector3i_msg(
+                const Vector3i_msg& x);
 
         /*!
          * @brief Move constructor.
-         * @param x Reference to the object idl_msg::Vector3f_msg that will be copied.
+         * @param x Reference to the object idl_msg::Vector3i_msg that will be copied.
          */
-        eProsima_user_DllExport Vector3f_msg(
-                Vector3f_msg&& x);
+        eProsima_user_DllExport Vector3i_msg(
+                Vector3i_msg&& x);
 
         /*!
          * @brief Copy assignment.
-         * @param x Reference to the object idl_msg::Vector3f_msg that will be copied.
+         * @param x Reference to the object idl_msg::Vector3i_msg that will be copied.
          */
-        eProsima_user_DllExport Vector3f_msg& operator =(
-                const Vector3f_msg& x);
+        eProsima_user_DllExport Vector3i_msg& operator =(
+                const Vector3i_msg& x);
 
         /*!
          * @brief Move assignment.
-         * @param x Reference to the object idl_msg::Vector3f_msg that will be copied.
+         * @param x Reference to the object idl_msg::Vector3i_msg that will be copied.
          */
-        eProsima_user_DllExport Vector3f_msg& operator =(
-                Vector3f_msg&& x);
+        eProsima_user_DllExport Vector3i_msg& operator =(
+                Vector3i_msg&& x);
 
         /*!
          * @brief Comparison operator.
-         * @param x idl_msg::Vector3f_msg object to compare.
+         * @param x idl_msg::Vector3i_msg object to compare.
          */
         eProsima_user_DllExport bool operator ==(
-                const Vector3f_msg& x);
+                const Vector3i_msg& x);
 
         /*!
          * @brief Comparison operator.
-         * @param x idl_msg::Vector3f_msg object to compare.
+         * @param x idl_msg::Vector3i_msg object to compare.
          */
         eProsima_user_DllExport bool operator !=(
-                const Vector3f_msg& x);
+                const Vector3i_msg& x);
 
         /*!
          * @brief This function sets a value in member x
@@ -196,7 +196,7 @@ namespace idl_msg {
          * @return Serialized size.
          */
         eProsima_user_DllExport static size_t getCdrSerializedSize(
-                const idl_msg::Vector3f_msg& data,
+                const idl_msg::Vector3i_msg& data,
                 size_t current_alignment = 0);
 
 

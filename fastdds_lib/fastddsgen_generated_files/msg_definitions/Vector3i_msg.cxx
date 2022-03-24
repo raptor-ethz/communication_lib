@@ -34,53 +34,42 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
-idl_msg::Vector3f_msg::Vector3f_msg()
+idl_msg::Vector3i_msg::Vector3i_msg()
 {
-    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6580cfdd
+    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@52f759d7
     m_x = 0;
-    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7e0b85f9
+    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7cbd213e
     m_y = 0;
-    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63355449
+    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@192d3247
     m_z = 0;
 
 }
 
-idl_msg::Vector3f_msg::~Vector3f_msg()
+idl_msg::Vector3i_msg::~Vector3i_msg()
 {
 
 
 
 }
 
-idl_msg::Vector3f_msg::Vector3f_msg(
-        const Vector3f_msg& x)
-{
-    m_x = x.m_x;
-    m_y = x.m_y;
-    m_z = x.m_z;
-}
-
-idl_msg::Vector3f_msg::Vector3f_msg(
-        Vector3f_msg&& x)
+idl_msg::Vector3i_msg::Vector3i_msg(
+        const Vector3i_msg& x)
 {
     m_x = x.m_x;
     m_y = x.m_y;
     m_z = x.m_z;
 }
 
-idl_msg::Vector3f_msg& idl_msg::Vector3f_msg::operator =(
-        const Vector3f_msg& x)
+idl_msg::Vector3i_msg::Vector3i_msg(
+        Vector3i_msg&& x)
 {
-
     m_x = x.m_x;
     m_y = x.m_y;
     m_z = x.m_z;
-
-    return *this;
 }
 
-idl_msg::Vector3f_msg& idl_msg::Vector3f_msg::operator =(
-        Vector3f_msg&& x)
+idl_msg::Vector3i_msg& idl_msg::Vector3i_msg::operator =(
+        const Vector3i_msg& x)
 {
 
     m_x = x.m_x;
@@ -90,20 +79,31 @@ idl_msg::Vector3f_msg& idl_msg::Vector3f_msg::operator =(
     return *this;
 }
 
-bool idl_msg::Vector3f_msg::operator ==(
-        const Vector3f_msg& x)
+idl_msg::Vector3i_msg& idl_msg::Vector3i_msg::operator =(
+        Vector3i_msg&& x)
+{
+
+    m_x = x.m_x;
+    m_y = x.m_y;
+    m_z = x.m_z;
+
+    return *this;
+}
+
+bool idl_msg::Vector3i_msg::operator ==(
+        const Vector3i_msg& x)
 {
 
     return (m_x == x.m_x && m_y == x.m_y && m_z == x.m_z);
 }
 
-bool idl_msg::Vector3f_msg::operator !=(
-        const Vector3f_msg& x)
+bool idl_msg::Vector3i_msg::operator !=(
+        const Vector3i_msg& x)
 {
     return !(*this == x);
 }
 
-size_t idl_msg::Vector3f_msg::getMaxCdrSerializedSize(
+size_t idl_msg::Vector3i_msg::getMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t initial_alignment = current_alignment;
@@ -122,8 +122,8 @@ size_t idl_msg::Vector3f_msg::getMaxCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-size_t idl_msg::Vector3f_msg::getCdrSerializedSize(
-        const idl_msg::Vector3f_msg& data,
+size_t idl_msg::Vector3i_msg::getCdrSerializedSize(
+        const idl_msg::Vector3i_msg& data,
         size_t current_alignment)
 {
     (void)data;
@@ -143,7 +143,7 @@ size_t idl_msg::Vector3f_msg::getCdrSerializedSize(
     return current_alignment - initial_alignment;
 }
 
-void idl_msg::Vector3f_msg::serialize(
+void idl_msg::Vector3i_msg::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
@@ -153,7 +153,7 @@ void idl_msg::Vector3f_msg::serialize(
 
 }
 
-void idl_msg::Vector3f_msg::deserialize(
+void idl_msg::Vector3i_msg::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
@@ -166,7 +166,7 @@ void idl_msg::Vector3f_msg::deserialize(
  * @brief This function sets a value in member x
  * @param _x New value for member x
  */
-void idl_msg::Vector3f_msg::x(
+void idl_msg::Vector3i_msg::x(
         int32_t _x)
 {
     m_x = _x;
@@ -176,7 +176,7 @@ void idl_msg::Vector3f_msg::x(
  * @brief This function returns the value of member x
  * @return Value of member x
  */
-int32_t idl_msg::Vector3f_msg::x() const
+int32_t idl_msg::Vector3i_msg::x() const
 {
     return m_x;
 }
@@ -185,7 +185,7 @@ int32_t idl_msg::Vector3f_msg::x() const
  * @brief This function returns a reference to member x
  * @return Reference to member x
  */
-int32_t& idl_msg::Vector3f_msg::x()
+int32_t& idl_msg::Vector3i_msg::x()
 {
     return m_x;
 }
@@ -194,7 +194,7 @@ int32_t& idl_msg::Vector3f_msg::x()
  * @brief This function sets a value in member y
  * @param _y New value for member y
  */
-void idl_msg::Vector3f_msg::y(
+void idl_msg::Vector3i_msg::y(
         int32_t _y)
 {
     m_y = _y;
@@ -204,7 +204,7 @@ void idl_msg::Vector3f_msg::y(
  * @brief This function returns the value of member y
  * @return Value of member y
  */
-int32_t idl_msg::Vector3f_msg::y() const
+int32_t idl_msg::Vector3i_msg::y() const
 {
     return m_y;
 }
@@ -213,7 +213,7 @@ int32_t idl_msg::Vector3f_msg::y() const
  * @brief This function returns a reference to member y
  * @return Reference to member y
  */
-int32_t& idl_msg::Vector3f_msg::y()
+int32_t& idl_msg::Vector3i_msg::y()
 {
     return m_y;
 }
@@ -222,7 +222,7 @@ int32_t& idl_msg::Vector3f_msg::y()
  * @brief This function sets a value in member z
  * @param _z New value for member z
  */
-void idl_msg::Vector3f_msg::z(
+void idl_msg::Vector3i_msg::z(
         int32_t _z)
 {
     m_z = _z;
@@ -232,7 +232,7 @@ void idl_msg::Vector3f_msg::z(
  * @brief This function returns the value of member z
  * @return Value of member z
  */
-int32_t idl_msg::Vector3f_msg::z() const
+int32_t idl_msg::Vector3i_msg::z() const
 {
     return m_z;
 }
@@ -241,13 +241,13 @@ int32_t idl_msg::Vector3f_msg::z() const
  * @brief This function returns a reference to member z
  * @return Reference to member z
  */
-int32_t& idl_msg::Vector3f_msg::z()
+int32_t& idl_msg::Vector3i_msg::z()
 {
     return m_z;
 }
 
 
-size_t idl_msg::Vector3f_msg::getKeyMaxCdrSerializedSize(
+size_t idl_msg::Vector3i_msg::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
@@ -260,12 +260,12 @@ size_t idl_msg::Vector3f_msg::getKeyMaxCdrSerializedSize(
     return current_align;
 }
 
-bool idl_msg::Vector3f_msg::isKeyDefined()
+bool idl_msg::Vector3i_msg::isKeyDefined()
 {
     return false;
 }
 
-void idl_msg::Vector3f_msg::serializeKey(
+void idl_msg::Vector3i_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;

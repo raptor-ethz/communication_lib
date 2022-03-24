@@ -37,8 +37,8 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadAction_msg::QuadAction_msg()
 {
-    // m_action com.eprosima.idl.parser.typecode.EnumTypeCode@21507a04
-    m_action = ::status;
+    // m_action com.eprosima.idl.parser.typecode.EnumTypeCode@2698dc7
+    m_action = idl_msg::status;
 
 }
 
@@ -130,7 +130,7 @@ void idl_msg::QuadAction_msg::deserialize(
     {
         uint32_t enum_value = 0;
         dcdr >> enum_value;
-        m_action = (Action)enum_value;
+        m_action = (idl_msg::Action_cmd)enum_value;
     }
 
 }
@@ -140,7 +140,7 @@ void idl_msg::QuadAction_msg::deserialize(
  * @param _action New value for member action
  */
 void idl_msg::QuadAction_msg::action(
-        Action _action)
+        idl_msg::Action_cmd _action)
 {
     m_action = _action;
 }
@@ -149,7 +149,7 @@ void idl_msg::QuadAction_msg::action(
  * @brief This function returns the value of member action
  * @return Value of member action
  */
-Action idl_msg::QuadAction_msg::action() const
+idl_msg::Action_cmd idl_msg::QuadAction_msg::action() const
 {
     return m_action;
 }
@@ -158,7 +158,7 @@ Action idl_msg::QuadAction_msg::action() const
  * @brief This function returns a reference to member action
  * @return Reference to member action
  */
-Action& idl_msg::QuadAction_msg::action()
+idl_msg::Action_cmd& idl_msg::QuadAction_msg::action()
 {
     return m_action;
 }
