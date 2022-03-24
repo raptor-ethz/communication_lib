@@ -36,10 +36,10 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg()
 {
-    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49c386c8
-    m_front_arm_deg = 0.0;
-    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@56528192
-    m_back_arm_deg = 0.0;
+    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@b7dd107
+    m_front_arm_deg = 0;
+    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7cbd213e
+    m_back_arm_deg = 0;
 
 }
 
@@ -152,7 +152,7 @@ void idl_msg::RotGripCmd_msg::deserialize(
  * @param _front_arm_deg New value for member front_arm_deg
  */
 void idl_msg::RotGripCmd_msg::front_arm_deg(
-        float _front_arm_deg)
+        int32_t _front_arm_deg)
 {
     m_front_arm_deg = _front_arm_deg;
 }
@@ -161,7 +161,7 @@ void idl_msg::RotGripCmd_msg::front_arm_deg(
  * @brief This function returns the value of member front_arm_deg
  * @return Value of member front_arm_deg
  */
-float idl_msg::RotGripCmd_msg::front_arm_deg() const
+int32_t idl_msg::RotGripCmd_msg::front_arm_deg() const
 {
     return m_front_arm_deg;
 }
@@ -170,7 +170,7 @@ float idl_msg::RotGripCmd_msg::front_arm_deg() const
  * @brief This function returns a reference to member front_arm_deg
  * @return Reference to member front_arm_deg
  */
-float& idl_msg::RotGripCmd_msg::front_arm_deg()
+int32_t& idl_msg::RotGripCmd_msg::front_arm_deg()
 {
     return m_front_arm_deg;
 }
@@ -180,7 +180,7 @@ float& idl_msg::RotGripCmd_msg::front_arm_deg()
  * @param _back_arm_deg New value for member back_arm_deg
  */
 void idl_msg::RotGripCmd_msg::back_arm_deg(
-        float _back_arm_deg)
+        int32_t _back_arm_deg)
 {
     m_back_arm_deg = _back_arm_deg;
 }
@@ -189,7 +189,7 @@ void idl_msg::RotGripCmd_msg::back_arm_deg(
  * @brief This function returns the value of member back_arm_deg
  * @return Value of member back_arm_deg
  */
-float idl_msg::RotGripCmd_msg::back_arm_deg() const
+int32_t idl_msg::RotGripCmd_msg::back_arm_deg() const
 {
     return m_back_arm_deg;
 }
@@ -198,7 +198,7 @@ float idl_msg::RotGripCmd_msg::back_arm_deg() const
  * @brief This function returns a reference to member back_arm_deg
  * @return Reference to member back_arm_deg
  */
-float& idl_msg::RotGripCmd_msg::back_arm_deg()
+int32_t& idl_msg::RotGripCmd_msg::back_arm_deg()
 {
     return m_back_arm_deg;
 }

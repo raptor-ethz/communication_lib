@@ -127,38 +127,38 @@ namespace idl_msg {
          * @param _front_arm_deg New value for member front_arm_deg
          */
         eProsima_user_DllExport void front_arm_deg(
-                float _front_arm_deg);
+                int32_t _front_arm_deg);
 
         /*!
          * @brief This function returns the value of member front_arm_deg
          * @return Value of member front_arm_deg
          */
-        eProsima_user_DllExport float front_arm_deg() const;
+        eProsima_user_DllExport int32_t front_arm_deg() const;
 
         /*!
          * @brief This function returns a reference to member front_arm_deg
          * @return Reference to member front_arm_deg
          */
-        eProsima_user_DllExport float& front_arm_deg();
+        eProsima_user_DllExport int32_t& front_arm_deg();
 
         /*!
          * @brief This function sets a value in member back_arm_deg
          * @param _back_arm_deg New value for member back_arm_deg
          */
         eProsima_user_DllExport void back_arm_deg(
-                float _back_arm_deg);
+                int32_t _back_arm_deg);
 
         /*!
          * @brief This function returns the value of member back_arm_deg
          * @return Value of member back_arm_deg
          */
-        eProsima_user_DllExport float back_arm_deg() const;
+        eProsima_user_DllExport int32_t back_arm_deg() const;
 
         /*!
          * @brief This function returns a reference to member back_arm_deg
          * @return Reference to member back_arm_deg
          */
-        eProsima_user_DllExport float& back_arm_deg();
+        eProsima_user_DllExport int32_t& back_arm_deg();
 
 
         /*!
@@ -220,8 +220,8 @@ namespace idl_msg {
 
     private:
 
-        float m_front_arm_deg;
-        float m_back_arm_deg;
+        int32_t m_front_arm_deg;
+        int32_t m_back_arm_deg;
     };
 } // namespace idl_msg
 
