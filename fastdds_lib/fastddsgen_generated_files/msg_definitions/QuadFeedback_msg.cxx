@@ -38,12 +38,12 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadFeedback_msg::QuadFeedback_msg()
 {
-    // m_feedback com.eprosima.idl.parser.typecode.EnumTypeCode@3d8314f0
-    m_feedback = idl_msg::null;
-    // m_status com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@2df32bf7
+    // m_feedback com.eprosima.idl.parser.typecode.EnumTypeCode@2bea5ab4
+    m_feedback = idl_msg::fb_null;
+    // m_status com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@3d8314f0
 
-    // m_result com.eprosima.idl.parser.typecode.EnumTypeCode@530612ba
-    m_result = idl_msg::null;
+    // m_result com.eprosima.idl.parser.typecode.EnumTypeCode@2df32bf7
+    m_result = idl_msg::res_null;
 
 }
 

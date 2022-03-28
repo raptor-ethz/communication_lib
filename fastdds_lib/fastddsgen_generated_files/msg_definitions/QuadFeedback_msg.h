@@ -69,13 +69,13 @@ namespace idl_msg {
      */
     enum FeedbackType : uint32_t
     {
-        null,
-        status,
-        arm,
-        disarm,
-        takeoff,
-        land,
-        offboard
+        fb_null,
+        fb_status,
+        fb_arm,
+        fb_disarm,
+        fb_takeoff,
+        fb_land,
+        fb_offboard
     };
     /*!
      * @brief This class represents the enumeration ResultType defined by the user in the IDL file.
@@ -83,10 +83,10 @@ namespace idl_msg {
      */
     enum ResultType : uint32_t
     {
-        null,
-        success,
-        fail,
-        disaster
+        res_null,
+        res_success,
+        res_fail,
+        res_disaster
     };
     /*!
      * @brief This class represents the structure QuadFeedback_msg defined by the user in the IDL file.
