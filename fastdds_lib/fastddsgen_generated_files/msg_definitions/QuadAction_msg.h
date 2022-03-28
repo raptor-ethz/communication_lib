@@ -73,6 +73,7 @@ namespace idl_msg {
         act_disarm,
         act_takeoff,
         act_land,
+        act_hover,
         act_offboard
     };
     /*!
