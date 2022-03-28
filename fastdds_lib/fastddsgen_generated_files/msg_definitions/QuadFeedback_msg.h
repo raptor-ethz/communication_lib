@@ -75,6 +75,7 @@ namespace idl_msg {
         fb_disarm,
         fb_takeoff,
         fb_land,
+        fb_hover,
         fb_offboard
     };
     /*!
