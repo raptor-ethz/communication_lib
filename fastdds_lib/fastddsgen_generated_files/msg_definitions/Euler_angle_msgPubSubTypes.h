@@ -35,18 +35,18 @@
 namespace idl_msg
 {
     /*!
-     * @brief This class represents the TopicDataType of the type Euler_angle defined by the user in the IDL file.
+     * @brief This class represents the TopicDataType of the type Euler_angle_msg defined by the user in the IDL file.
      * @ingroup EULER_ANGLE_MSG
      */
-    class Euler_anglePubSubType : public eprosima::fastdds::dds::TopicDataType
+    class Euler_angle_msgPubSubType : public eprosima::fastdds::dds::TopicDataType
     {
     public:
 
-        typedef Euler_angle type;
+        typedef Euler_angle_msg type;
 
-        eProsima_user_DllExport Euler_anglePubSubType();
+        eProsima_user_DllExport Euler_angle_msgPubSubType();
 
-        eProsima_user_DllExport virtual ~Euler_anglePubSubType();
+        eProsima_user_DllExport virtual ~Euler_angle_msgPubSubType();
 
         eProsima_user_DllExport virtual bool serialize(
                 void* data,
@@ -89,7 +89,7 @@ namespace idl_msg
         eProsima_user_DllExport inline bool construct_sample(
                 void* memory) const override
         {
-            new (memory) Euler_angle();
+            new (memory) Euler_angle_msg();
             return true;
         }
 

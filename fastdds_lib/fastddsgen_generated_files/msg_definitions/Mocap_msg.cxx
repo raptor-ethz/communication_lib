@@ -118,7 +118,7 @@ size_t idl_msg::Mocap_msg::getMaxCdrSerializedSize(
 
     current_alignment += idl_msg::Header_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += idl_msg::Vector3f_msg::getMaxCdrSerializedSize(current_alignment);
-    current_alignment += idl_msg::Euler_angle::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += idl_msg::Euler_angle_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -136,7 +136,7 @@ size_t idl_msg::Mocap_msg::getCdrSerializedSize(
 
     current_alignment += idl_msg::Header_msg::getCdrSerializedSize(data.header(), current_alignment);
     current_alignment += idl_msg::Vector3f_msg::getCdrSerializedSize(data.position(), current_alignment);
-    current_alignment += idl_msg::Euler_angle::getCdrSerializedSize(data.orientation(), current_alignment);
+    current_alignment += idl_msg::Euler_angle_msg::getCdrSerializedSize(data.orientation(), current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -244,7 +244,7 @@ idl_msg::Vector3f_msg& idl_msg::Mocap_msg::position()
  * @param _orientation New value to be copied in member orientation
  */
 void idl_msg::Mocap_msg::orientation(
-        const idl_msg::Euler_angle& _orientation)
+        const idl_msg::Euler_angle_msg& _orientation)
 {
     m_orientation = _orientation;
 }
@@ -254,7 +254,7 @@ void idl_msg::Mocap_msg::orientation(
  * @param _orientation New value to be moved in member orientation
  */
 void idl_msg::Mocap_msg::orientation(
-        idl_msg::Euler_angle&& _orientation)
+        idl_msg::Euler_angle_msg&& _orientation)
 {
     m_orientation = std::move(_orientation);
 }
@@ -263,7 +263,7 @@ void idl_msg::Mocap_msg::orientation(
  * @brief This function returns a constant reference to member orientation
  * @return Constant reference to member orientation
  */
-const idl_msg::Euler_angle& idl_msg::Mocap_msg::orientation() const
+const idl_msg::Euler_angle_msg& idl_msg::Mocap_msg::orientation() const
 {
     return m_orientation;
 }
@@ -272,7 +272,7 @@ const idl_msg::Euler_angle& idl_msg::Mocap_msg::orientation() const
  * @brief This function returns a reference to member orientation
  * @return Reference to member orientation
  */
-idl_msg::Euler_angle& idl_msg::Mocap_msg::orientation()
+idl_msg::Euler_angle_msg& idl_msg::Mocap_msg::orientation()
 {
     return m_orientation;
 }

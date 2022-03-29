@@ -63,64 +63,64 @@ class Cdr;
 
 namespace idl_msg {
     /*!
-     * @brief This class represents the structure Euler_angle defined by the user in the IDL file.
+     * @brief This class represents the structure Euler_angle_msg defined by the user in the IDL file.
      * @ingroup EULER_ANGLE_MSG
      */
-    class Euler_angle
+    class Euler_angle_msg
     {
     public:
 
         /*!
          * @brief Default constructor.
          */
-        eProsima_user_DllExport Euler_angle();
+        eProsima_user_DllExport Euler_angle_msg();
 
         /*!
          * @brief Default destructor.
          */
-        eProsima_user_DllExport ~Euler_angle();
+        eProsima_user_DllExport ~Euler_angle_msg();
 
         /*!
          * @brief Copy constructor.
-         * @param x Reference to the object idl_msg::Euler_angle that will be copied.
+         * @param x Reference to the object idl_msg::Euler_angle_msg that will be copied.
          */
-        eProsima_user_DllExport Euler_angle(
-                const Euler_angle& x);
+        eProsima_user_DllExport Euler_angle_msg(
+                const Euler_angle_msg& x);
 
         /*!
          * @brief Move constructor.
-         * @param x Reference to the object idl_msg::Euler_angle that will be copied.
+         * @param x Reference to the object idl_msg::Euler_angle_msg that will be copied.
          */
-        eProsima_user_DllExport Euler_angle(
-                Euler_angle&& x);
+        eProsima_user_DllExport Euler_angle_msg(
+                Euler_angle_msg&& x);
 
         /*!
          * @brief Copy assignment.
-         * @param x Reference to the object idl_msg::Euler_angle that will be copied.
+         * @param x Reference to the object idl_msg::Euler_angle_msg that will be copied.
          */
-        eProsima_user_DllExport Euler_angle& operator =(
-                const Euler_angle& x);
+        eProsima_user_DllExport Euler_angle_msg& operator =(
+                const Euler_angle_msg& x);
 
         /*!
          * @brief Move assignment.
-         * @param x Reference to the object idl_msg::Euler_angle that will be copied.
+         * @param x Reference to the object idl_msg::Euler_angle_msg that will be copied.
          */
-        eProsima_user_DllExport Euler_angle& operator =(
-                Euler_angle&& x);
+        eProsima_user_DllExport Euler_angle_msg& operator =(
+                Euler_angle_msg&& x);
 
         /*!
          * @brief Comparison operator.
-         * @param x idl_msg::Euler_angle object to compare.
+         * @param x idl_msg::Euler_angle_msg object to compare.
          */
         eProsima_user_DllExport bool operator ==(
-                const Euler_angle& x);
+                const Euler_angle_msg& x);
 
         /*!
          * @brief Comparison operator.
-         * @param x idl_msg::Euler_angle object to compare.
+         * @param x idl_msg::Euler_angle_msg object to compare.
          */
         eProsima_user_DllExport bool operator !=(
-                const Euler_angle& x);
+                const Euler_angle_msg& x);
 
         /*!
          * @brief This function sets a value in member roll
@@ -196,7 +196,7 @@ namespace idl_msg {
          * @return Serialized size.
          */
         eProsima_user_DllExport static size_t getCdrSerializedSize(
-                const idl_msg::Euler_angle& data,
+                const idl_msg::Euler_angle_msg& data,
                 size_t current_alignment = 0);
 
 

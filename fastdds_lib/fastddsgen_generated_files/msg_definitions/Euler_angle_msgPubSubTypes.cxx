@@ -29,20 +29,20 @@ using SerializedPayload_t = eprosima::fastrtps::rtps::SerializedPayload_t;
 using InstanceHandle_t = eprosima::fastrtps::rtps::InstanceHandle_t;
 
 namespace idl_msg {
-    Euler_anglePubSubType::Euler_anglePubSubType()
+    Euler_angle_msgPubSubType::Euler_angle_msgPubSubType()
     {
-        setName("idl_msg::Euler_angle");
-        auto type_size = Euler_angle::getMaxCdrSerializedSize();
+        setName("idl_msg::Euler_angle_msg");
+        auto type_size = Euler_angle_msg::getMaxCdrSerializedSize();
         type_size += eprosima::fastcdr::Cdr::alignment(type_size, 4); /* possible submessage alignment */
         m_typeSize = static_cast<uint32_t>(type_size) + 4; /*encapsulation*/
-        m_isGetKeyDefined = Euler_angle::isKeyDefined();
-        size_t keyLength = Euler_angle::getKeyMaxCdrSerializedSize() > 16 ?
-                Euler_angle::getKeyMaxCdrSerializedSize() : 16;
+        m_isGetKeyDefined = Euler_angle_msg::isKeyDefined();
+        size_t keyLength = Euler_angle_msg::getKeyMaxCdrSerializedSize() > 16 ?
+                Euler_angle_msg::getKeyMaxCdrSerializedSize() : 16;
         m_keyBuffer = reinterpret_cast<unsigned char*>(malloc(keyLength));
         memset(m_keyBuffer, 0, keyLength);
     }
 
-    Euler_anglePubSubType::~Euler_anglePubSubType()
+    Euler_angle_msgPubSubType::~Euler_angle_msgPubSubType()
     {
         if (m_keyBuffer != nullptr)
         {
@@ -50,11 +50,11 @@ namespace idl_msg {
         }
     }
 
-    bool Euler_anglePubSubType::serialize(
+    bool Euler_angle_msgPubSubType::serialize(
             void* data,
             SerializedPayload_t* payload)
     {
-        Euler_angle* p_type = static_cast<Euler_angle*>(data);
+        Euler_angle_msg* p_type = static_cast<Euler_angle_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(payload->data), payload->max_size);
@@ -79,12 +79,12 @@ namespace idl_msg {
         return true;
     }
 
-    bool Euler_anglePubSubType::deserialize(
+    bool Euler_angle_msgPubSubType::deserialize(
             SerializedPayload_t* payload,
             void* data)
     {
         //Convert DATA to pointer of your type
-        Euler_angle* p_type = static_cast<Euler_angle*>(data);
+        Euler_angle_msg* p_type = static_cast<Euler_angle_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(payload->data), payload->length);
@@ -109,28 +109,28 @@ namespace idl_msg {
         return true;
     }
 
-    std::function<uint32_t()> Euler_anglePubSubType::getSerializedSizeProvider(
+    std::function<uint32_t()> Euler_angle_msgPubSubType::getSerializedSizeProvider(
             void* data)
     {
         return [data]() -> uint32_t
                {
-                   return static_cast<uint32_t>(type::getCdrSerializedSize(*static_cast<Euler_angle*>(data))) +
+                   return static_cast<uint32_t>(type::getCdrSerializedSize(*static_cast<Euler_angle_msg*>(data))) +
                           4u /*encapsulation*/;
                };
     }
 
-    void* Euler_anglePubSubType::createData()
+    void* Euler_angle_msgPubSubType::createData()
     {
-        return reinterpret_cast<void*>(new Euler_angle());
+        return reinterpret_cast<void*>(new Euler_angle_msg());
     }
 
-    void Euler_anglePubSubType::deleteData(
+    void Euler_angle_msgPubSubType::deleteData(
             void* data)
     {
-        delete(reinterpret_cast<Euler_angle*>(data));
+        delete(reinterpret_cast<Euler_angle_msg*>(data));
     }
 
-    bool Euler_anglePubSubType::getKey(
+    bool Euler_angle_msgPubSubType::getKey(
             void* data,
             InstanceHandle_t* handle,
             bool force_md5)
@@ -140,16 +140,16 @@ namespace idl_msg {
             return false;
         }
 
-        Euler_angle* p_type = static_cast<Euler_angle*>(data);
+        Euler_angle_msg* p_type = static_cast<Euler_angle_msg*>(data);
 
         // Object that manages the raw buffer.
         eprosima::fastcdr::FastBuffer fastbuffer(reinterpret_cast<char*>(m_keyBuffer),
-                Euler_angle::getKeyMaxCdrSerializedSize());
+                Euler_angle_msg::getKeyMaxCdrSerializedSize());
 
         // Object that serializes the data.
         eprosima::fastcdr::Cdr ser(fastbuffer, eprosima::fastcdr::Cdr::BIG_ENDIANNESS);
         p_type->serializeKey(ser);
-        if (force_md5 || Euler_angle::getKeyMaxCdrSerializedSize() > 16)
+        if (force_md5 || Euler_angle_msg::getKeyMaxCdrSerializedSize() > 16)
         {
             m_md5.init();
             m_md5.update(m_keyBuffer, static_cast<unsigned int>(ser.getSerializedDataLength()));

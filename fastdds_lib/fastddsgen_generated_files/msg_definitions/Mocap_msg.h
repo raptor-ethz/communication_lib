@@ -180,26 +180,26 @@ namespace idl_msg {
          * @param _orientation New value to be copied in member orientation
          */
         eProsima_user_DllExport void orientation(
-                const idl_msg::Euler_angle& _orientation);
+                const idl_msg::Euler_angle_msg& _orientation);
 
         /*!
          * @brief This function moves the value in member orientation
          * @param _orientation New value to be moved in member orientation
          */
         eProsima_user_DllExport void orientation(
-                idl_msg::Euler_angle&& _orientation);
+                idl_msg::Euler_angle_msg&& _orientation);
 
         /*!
          * @brief This function returns a constant reference to member orientation
          * @return Constant reference to member orientation
          */
-        eProsima_user_DllExport const idl_msg::Euler_angle& orientation() const;
+        eProsima_user_DllExport const idl_msg::Euler_angle_msg& orientation() const;
 
         /*!
          * @brief This function returns a reference to member orientation
          * @return Reference to member orientation
          */
-        eProsima_user_DllExport idl_msg::Euler_angle& orientation();
+        eProsima_user_DllExport idl_msg::Euler_angle_msg& orientation();
         /*!
          * @brief This function sets a value in member latency
          * @param _latency New value for member latency
@@ -281,7 +281,7 @@ namespace idl_msg {
 
         idl_msg::Header_msg m_header;
         idl_msg::Vector3f_msg m_position;
-        idl_msg::Euler_angle m_orientation;
+        idl_msg::Euler_angle_msg m_orientation;
         float m_latency;
     };
 } // namespace idl_msg
