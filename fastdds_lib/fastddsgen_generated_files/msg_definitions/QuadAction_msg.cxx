@@ -37,7 +37,7 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadAction_msg::QuadAction_msg()
 {
-    // m_action com.eprosima.idl.parser.typecode.EnumTypeCode@6f3b5d16
+    // m_action com.eprosima.idl.parser.typecode.EnumTypeCode@6b419da
     m_action = idl_msg::act_status;
 
 }
