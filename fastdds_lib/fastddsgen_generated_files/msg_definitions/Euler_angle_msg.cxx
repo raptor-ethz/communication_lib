@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Euler_angle_msg::Euler_angle_msg()
 {
-    // m_roll com.eprosima.idl.parser.typecode.PrimitiveTypeCode@10dba097
+    // m_roll com.eprosima.idl.parser.typecode.PrimitiveTypeCode@eafc191
     m_roll = 0.0;
-    // m_pitch com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1786f9d5
+    // m_pitch com.eprosima.idl.parser.typecode.PrimitiveTypeCode@612fc6eb
     m_pitch = 0.0;
-    // m_yaw com.eprosima.idl.parser.typecode.PrimitiveTypeCode@704d6e83
+    // m_yaw com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1060b431
     m_yaw = 0.0;
 
 }

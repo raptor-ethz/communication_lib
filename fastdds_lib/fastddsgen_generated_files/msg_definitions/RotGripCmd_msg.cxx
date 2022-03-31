@@ -36,15 +36,18 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg()
 {
-    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@149e0f5d
+    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e802ef9
     m_front_arm_deg = 0;
-    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1b1473ab
+    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b6faea6
     m_back_arm_deg = 0;
+    // m_trigger_gripper com.eprosima.idl.parser.typecode.PrimitiveTypeCode@778d1062
+    m_trigger_gripper = false;
 
 }
 
 idl_msg::RotGripCmd_msg::~RotGripCmd_msg()
 {
+
 
 
 }
@@ -54,6 +57,7 @@ idl_msg::RotGripCmd_msg::RotGripCmd_msg(
 {
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
+    m_trigger_gripper = x.m_trigger_gripper;
 }
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg(
@@ -61,6 +65,7 @@ idl_msg::RotGripCmd_msg::RotGripCmd_msg(
 {
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
+    m_trigger_gripper = x.m_trigger_gripper;
 }
 
 idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
@@ -69,6 +74,7 @@ idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
 
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
+    m_trigger_gripper = x.m_trigger_gripper;
 
     return *this;
 }
@@ -79,6 +85,7 @@ idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
 
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
+    m_trigger_gripper = x.m_trigger_gripper;
 
     return *this;
 }
@@ -87,7 +94,7 @@ bool idl_msg::RotGripCmd_msg::operator ==(
         const RotGripCmd_msg& x)
 {
 
-    return (m_front_arm_deg == x.m_front_arm_deg && m_back_arm_deg == x.m_back_arm_deg);
+    return (m_front_arm_deg == x.m_front_arm_deg && m_back_arm_deg == x.m_back_arm_deg && m_trigger_gripper == x.m_trigger_gripper);
 }
 
 bool idl_msg::RotGripCmd_msg::operator !=(
@@ -108,6 +115,9 @@ size_t idl_msg::RotGripCmd_msg::getMaxCdrSerializedSize(
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -126,6 +136,9 @@ size_t idl_msg::RotGripCmd_msg::getCdrSerializedSize(
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -136,6 +149,7 @@ void idl_msg::RotGripCmd_msg::serialize(
 
     scdr << m_front_arm_deg;
     scdr << m_back_arm_deg;
+    scdr << m_trigger_gripper;
 
 }
 
@@ -145,6 +159,7 @@ void idl_msg::RotGripCmd_msg::deserialize(
 
     dcdr >> m_front_arm_deg;
     dcdr >> m_back_arm_deg;
+    dcdr >> m_trigger_gripper;
 }
 
 /*!
@@ -203,11 +218,40 @@ int32_t& idl_msg::RotGripCmd_msg::back_arm_deg()
     return m_back_arm_deg;
 }
 
+/*!
+ * @brief This function sets a value in member trigger_gripper
+ * @param _trigger_gripper New value for member trigger_gripper
+ */
+void idl_msg::RotGripCmd_msg::trigger_gripper(
+        bool _trigger_gripper)
+{
+    m_trigger_gripper = _trigger_gripper;
+}
+
+/*!
+ * @brief This function returns the value of member trigger_gripper
+ * @return Value of member trigger_gripper
+ */
+bool idl_msg::RotGripCmd_msg::trigger_gripper() const
+{
+    return m_trigger_gripper;
+}
+
+/*!
+ * @brief This function returns a reference to member trigger_gripper
+ * @return Reference to member trigger_gripper
+ */
+bool& idl_msg::RotGripCmd_msg::trigger_gripper()
+{
+    return m_trigger_gripper;
+}
+
 
 size_t idl_msg::RotGripCmd_msg::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
 
 
 
@@ -225,6 +269,6 @@ void idl_msg::RotGripCmd_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-      
+       
 }
 

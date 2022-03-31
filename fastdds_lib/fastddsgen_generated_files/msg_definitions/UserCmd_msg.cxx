@@ -37,7 +37,7 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::UserCmd_msg::UserCmd_msg()
 {
-    // m_command com.eprosima.idl.parser.typecode.EnumTypeCode@6580cfdd
+    // m_command com.eprosima.idl.parser.typecode.EnumTypeCode@3d680b5a
     m_command = idl_msg::ui_null;
 
 }
