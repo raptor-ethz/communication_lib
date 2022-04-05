@@ -179,25 +179,6 @@ namespace idl_msg {
          */
         eProsima_user_DllExport bool& trigger_gripper();
 
-        /*!
-         * @brief This function sets a value in member get_sensor_val
-         * @param _get_sensor_val New value for member get_sensor_val
-         */
-        eProsima_user_DllExport void get_sensor_val(
-                bool _get_sensor_val);
-
-        /*!
-         * @brief This function returns the value of member get_sensor_val
-         * @return Value of member get_sensor_val
-         */
-        eProsima_user_DllExport bool get_sensor_val() const;
-
-        /*!
-         * @brief This function returns a reference to member get_sensor_val
-         * @return Reference to member get_sensor_val
-         */
-        eProsima_user_DllExport bool& get_sensor_val();
-
 
         /*!
          * @brief This function returns the maximum serialized size of an object
@@ -261,7 +242,6 @@ namespace idl_msg {
         int32_t m_front_arm_deg;
         int32_t m_back_arm_deg;
         bool m_trigger_gripper;
-        bool m_get_sensor_val;
     };
 } // namespace idl_msg
 

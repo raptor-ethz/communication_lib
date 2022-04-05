@@ -42,8 +42,6 @@ idl_msg::RotGripCmd_msg::RotGripCmd_msg()
     m_back_arm_deg = 0;
     // m_trigger_gripper com.eprosima.idl.parser.typecode.PrimitiveTypeCode@778d1062
     m_trigger_gripper = false;
-    // m_get_sensor_val com.eprosima.idl.parser.typecode.PrimitiveTypeCode@670002
-    m_get_sensor_val = false;
 
 }
 
@@ -52,7 +50,6 @@ idl_msg::RotGripCmd_msg::~RotGripCmd_msg()
 
 
 
-
 }
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg(
@@ -61,7 +58,6 @@ idl_msg::RotGripCmd_msg::RotGripCmd_msg(
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
     m_trigger_gripper = x.m_trigger_gripper;
-    m_get_sensor_val = x.m_get_sensor_val;
 }
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg(
@@ -70,7 +66,6 @@ idl_msg::RotGripCmd_msg::RotGripCmd_msg(
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
     m_trigger_gripper = x.m_trigger_gripper;
-    m_get_sensor_val = x.m_get_sensor_val;
 }
 
 idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
@@ -80,7 +75,6 @@ idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
     m_trigger_gripper = x.m_trigger_gripper;
-    m_get_sensor_val = x.m_get_sensor_val;
 
     return *this;
 }
@@ -92,7 +86,6 @@ idl_msg::RotGripCmd_msg& idl_msg::RotGripCmd_msg::operator =(
     m_front_arm_deg = x.m_front_arm_deg;
     m_back_arm_deg = x.m_back_arm_deg;
     m_trigger_gripper = x.m_trigger_gripper;
-    m_get_sensor_val = x.m_get_sensor_val;
 
     return *this;
 }
@@ -101,7 +94,7 @@ bool idl_msg::RotGripCmd_msg::operator ==(
         const RotGripCmd_msg& x)
 {
 
-    return (m_front_arm_deg == x.m_front_arm_deg && m_back_arm_deg == x.m_back_arm_deg && m_trigger_gripper == x.m_trigger_gripper && m_get_sensor_val == x.m_get_sensor_val);
+    return (m_front_arm_deg == x.m_front_arm_deg && m_back_arm_deg == x.m_back_arm_deg && m_trigger_gripper == x.m_trigger_gripper);
 }
 
 bool idl_msg::RotGripCmd_msg::operator !=(
@@ -120,9 +113,6 @@ size_t idl_msg::RotGripCmd_msg::getMaxCdrSerializedSize(
 
 
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
-
-
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
@@ -149,9 +139,6 @@ size_t idl_msg::RotGripCmd_msg::getCdrSerializedSize(
     current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
 
 
-    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
-
-
 
     return current_alignment - initial_alignment;
 }
@@ -163,7 +150,6 @@ void idl_msg::RotGripCmd_msg::serialize(
     scdr << m_front_arm_deg;
     scdr << m_back_arm_deg;
     scdr << m_trigger_gripper;
-    scdr << m_get_sensor_val;
 
 }
 
@@ -174,7 +160,6 @@ void idl_msg::RotGripCmd_msg::deserialize(
     dcdr >> m_front_arm_deg;
     dcdr >> m_back_arm_deg;
     dcdr >> m_trigger_gripper;
-    dcdr >> m_get_sensor_val;
 }
 
 /*!
@@ -261,40 +246,11 @@ bool& idl_msg::RotGripCmd_msg::trigger_gripper()
     return m_trigger_gripper;
 }
 
-/*!
- * @brief This function sets a value in member get_sensor_val
- * @param _get_sensor_val New value for member get_sensor_val
- */
-void idl_msg::RotGripCmd_msg::get_sensor_val(
-        bool _get_sensor_val)
-{
-    m_get_sensor_val = _get_sensor_val;
-}
-
-/*!
- * @brief This function returns the value of member get_sensor_val
- * @return Value of member get_sensor_val
- */
-bool idl_msg::RotGripCmd_msg::get_sensor_val() const
-{
-    return m_get_sensor_val;
-}
-
-/*!
- * @brief This function returns a reference to member get_sensor_val
- * @return Reference to member get_sensor_val
- */
-bool& idl_msg::RotGripCmd_msg::get_sensor_val()
-{
-    return m_get_sensor_val;
-}
-
 
 size_t idl_msg::RotGripCmd_msg::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
-
 
 
 
@@ -313,6 +269,6 @@ void idl_msg::RotGripCmd_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-        
+       
 }
 
