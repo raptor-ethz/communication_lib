@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadPosCmd_msg::QuadPosCmd_msg()
 {
-    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@5db250b4
+    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@223f3642
 
-    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@223f3642
+    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@38c5cc4c
 
-    // m_yaw_angle com.eprosima.idl.parser.typecode.PrimitiveTypeCode@38c5cc4c
+    // m_yaw_angle com.eprosima.idl.parser.typecode.PrimitiveTypeCode@37918c79
     m_yaw_angle = 0.0;
 
 }

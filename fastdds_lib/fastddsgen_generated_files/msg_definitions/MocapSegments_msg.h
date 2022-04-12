@@ -123,30 +123,49 @@ namespace idl_msg {
                 const MocapSegments_msg& x);
 
         /*!
-         * @brief This function copies the value in member object_name
-         * @param _object_name New value to be copied in member object_name
+         * @brief This function copies the value in member header
+         * @param _header New value to be copied in member header
          */
-        eProsima_user_DllExport void object_name(
-                const std::string& _object_name);
+        eProsima_user_DllExport void header(
+                const std::string& _header);
 
         /*!
-         * @brief This function moves the value in member object_name
-         * @param _object_name New value to be moved in member object_name
+         * @brief This function moves the value in member header
+         * @param _header New value to be moved in member header
          */
-        eProsima_user_DllExport void object_name(
-                std::string&& _object_name);
+        eProsima_user_DllExport void header(
+                std::string&& _header);
 
         /*!
-         * @brief This function returns a constant reference to member object_name
-         * @return Constant reference to member object_name
+         * @brief This function returns a constant reference to member header
+         * @return Constant reference to member header
          */
-        eProsima_user_DllExport const std::string& object_name() const;
+        eProsima_user_DllExport const std::string& header() const;
 
         /*!
-         * @brief This function returns a reference to member object_name
-         * @return Reference to member object_name
+         * @brief This function returns a reference to member header
+         * @return Reference to member header
          */
-        eProsima_user_DllExport std::string& object_name();
+        eProsima_user_DllExport std::string& header();
+        /*!
+         * @brief This function sets a value in member length
+         * @param _length New value for member length
+         */
+        eProsima_user_DllExport void length(
+                int32_t _length);
+
+        /*!
+         * @brief This function returns the value of member length
+         * @return Value of member length
+         */
+        eProsima_user_DllExport int32_t length() const;
+
+        /*!
+         * @brief This function returns a reference to member length
+         * @return Reference to member length
+         */
+        eProsima_user_DllExport int32_t& length();
+
         /*!
          * @brief This function copies the value in member segment_x
          * @param _segment_x New value to be copied in member segment_x
@@ -282,7 +301,8 @@ namespace idl_msg {
 
     private:
 
-        std::string m_object_name;
+        std::string m_header;
+        int32_t m_length;
         std::array<float, 10> m_segment_x;
         std::array<float, 10> m_segment_y;
         std::array<float, 10> m_segment_z;
