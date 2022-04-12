@@ -22,8 +22,6 @@
 #ifndef _IDL_MSG_MOCAPSEGMENTS_MSG_H_
 #define _IDL_MSG_MOCAPSEGMENTS_MSG_H_
 
-#include "Vector3f_msg.h"
-#include "Header_msg.h"
 
 #include <stdint.h>
 #include <array>
@@ -125,55 +123,105 @@ namespace idl_msg {
                 const MocapSegments_msg& x);
 
         /*!
-         * @brief This function copies the value in member header
-         * @param _header New value to be copied in member header
+         * @brief This function copies the value in member object_name
+         * @param _object_name New value to be copied in member object_name
          */
-        eProsima_user_DllExport void header(
-                const idl_msg::Header_msg& _header);
+        eProsima_user_DllExport void object_name(
+                const std::string& _object_name);
 
         /*!
-         * @brief This function moves the value in member header
-         * @param _header New value to be moved in member header
+         * @brief This function moves the value in member object_name
+         * @param _object_name New value to be moved in member object_name
          */
-        eProsima_user_DllExport void header(
-                idl_msg::Header_msg&& _header);
+        eProsima_user_DllExport void object_name(
+                std::string&& _object_name);
 
         /*!
-         * @brief This function returns a constant reference to member header
-         * @return Constant reference to member header
+         * @brief This function returns a constant reference to member object_name
+         * @return Constant reference to member object_name
          */
-        eProsima_user_DllExport const idl_msg::Header_msg& header() const;
+        eProsima_user_DllExport const std::string& object_name() const;
 
         /*!
-         * @brief This function returns a reference to member header
-         * @return Reference to member header
+         * @brief This function returns a reference to member object_name
+         * @return Reference to member object_name
          */
-        eProsima_user_DllExport idl_msg::Header_msg& header();
+        eProsima_user_DllExport std::string& object_name();
         /*!
-         * @brief This function copies the value in member segments
-         * @param _segments New value to be copied in member segments
+         * @brief This function copies the value in member segment_x
+         * @param _segment_x New value to be copied in member segment_x
          */
-        eProsima_user_DllExport void segments(
-                const std::array<idl_msg::Vector3f_msg, 10>& _segments);
+        eProsima_user_DllExport void segment_x(
+                const std::array<float, 10>& _segment_x);
 
         /*!
-         * @brief This function moves the value in member segments
-         * @param _segments New value to be moved in member segments
+         * @brief This function moves the value in member segment_x
+         * @param _segment_x New value to be moved in member segment_x
          */
-        eProsima_user_DllExport void segments(
-                std::array<idl_msg::Vector3f_msg, 10>&& _segments);
+        eProsima_user_DllExport void segment_x(
+                std::array<float, 10>&& _segment_x);
 
         /*!
-         * @brief This function returns a constant reference to member segments
-         * @return Constant reference to member segments
+         * @brief This function returns a constant reference to member segment_x
+         * @return Constant reference to member segment_x
          */
-        eProsima_user_DllExport const std::array<idl_msg::Vector3f_msg, 10>& segments() const;
+        eProsima_user_DllExport const std::array<float, 10>& segment_x() const;
 
         /*!
-         * @brief This function returns a reference to member segments
-         * @return Reference to member segments
+         * @brief This function returns a reference to member segment_x
+         * @return Reference to member segment_x
          */
-        eProsima_user_DllExport std::array<idl_msg::Vector3f_msg, 10>& segments();
+        eProsima_user_DllExport std::array<float, 10>& segment_x();
+        /*!
+         * @brief This function copies the value in member segment_y
+         * @param _segment_y New value to be copied in member segment_y
+         */
+        eProsima_user_DllExport void segment_y(
+                const std::array<float, 10>& _segment_y);
+
+        /*!
+         * @brief This function moves the value in member segment_y
+         * @param _segment_y New value to be moved in member segment_y
+         */
+        eProsima_user_DllExport void segment_y(
+                std::array<float, 10>&& _segment_y);
+
+        /*!
+         * @brief This function returns a constant reference to member segment_y
+         * @return Constant reference to member segment_y
+         */
+        eProsima_user_DllExport const std::array<float, 10>& segment_y() const;
+
+        /*!
+         * @brief This function returns a reference to member segment_y
+         * @return Reference to member segment_y
+         */
+        eProsima_user_DllExport std::array<float, 10>& segment_y();
+        /*!
+         * @brief This function copies the value in member segment_z
+         * @param _segment_z New value to be copied in member segment_z
+         */
+        eProsima_user_DllExport void segment_z(
+                const std::array<float, 10>& _segment_z);
+
+        /*!
+         * @brief This function moves the value in member segment_z
+         * @param _segment_z New value to be moved in member segment_z
+         */
+        eProsima_user_DllExport void segment_z(
+                std::array<float, 10>&& _segment_z);
+
+        /*!
+         * @brief This function returns a constant reference to member segment_z
+         * @return Constant reference to member segment_z
+         */
+        eProsima_user_DllExport const std::array<float, 10>& segment_z() const;
+
+        /*!
+         * @brief This function returns a reference to member segment_z
+         * @return Reference to member segment_z
+         */
+        eProsima_user_DllExport std::array<float, 10>& segment_z();
 
         /*!
          * @brief This function returns the maximum serialized size of an object
@@ -234,8 +282,10 @@ namespace idl_msg {
 
     private:
 
-        idl_msg::Header_msg m_header;
-        std::array<idl_msg::Vector3f_msg, 10> m_segments;
+        std::string m_object_name;
+        std::array<float, 10> m_segment_x;
+        std::array<float, 10> m_segment_y;
+        std::array<float, 10> m_segment_z;
     };
 } // namespace idl_msg
 

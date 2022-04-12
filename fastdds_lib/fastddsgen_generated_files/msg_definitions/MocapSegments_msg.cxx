@@ -36,10 +36,14 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::MocapSegments_msg::MocapSegments_msg()
 {
-    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@5af97850
-
-    // m_segments com.eprosima.idl.parser.typecode.ArrayTypeCode@5ef60048
-
+    // m_object_name com.eprosima.idl.parser.typecode.StringTypeCode@5af97850
+    m_object_name ="";
+    // m_segment_x com.eprosima.idl.parser.typecode.ArrayTypeCode@5ef60048
+    memset(&m_segment_x, 0, (10) * 4);
+    // m_segment_y com.eprosima.idl.parser.typecode.ArrayTypeCode@780cb77
+    memset(&m_segment_y, 0, (10) * 4);
+    // m_segment_z com.eprosima.idl.parser.typecode.ArrayTypeCode@691a7f8f
+    memset(&m_segment_z, 0, (10) * 4);
 
 }
 
@@ -47,28 +51,36 @@ idl_msg::MocapSegments_msg::~MocapSegments_msg()
 {
 
 
+
+
 }
 
 idl_msg::MocapSegments_msg::MocapSegments_msg(
         const MocapSegments_msg& x)
 {
-    m_header = x.m_header;
-    m_segments = x.m_segments;
+    m_object_name = x.m_object_name;
+    m_segment_x = x.m_segment_x;
+    m_segment_y = x.m_segment_y;
+    m_segment_z = x.m_segment_z;
 }
 
 idl_msg::MocapSegments_msg::MocapSegments_msg(
         MocapSegments_msg&& x)
 {
-    m_header = std::move(x.m_header);
-    m_segments = std::move(x.m_segments);
+    m_object_name = std::move(x.m_object_name);
+    m_segment_x = std::move(x.m_segment_x);
+    m_segment_y = std::move(x.m_segment_y);
+    m_segment_z = std::move(x.m_segment_z);
 }
 
 idl_msg::MocapSegments_msg& idl_msg::MocapSegments_msg::operator =(
         const MocapSegments_msg& x)
 {
 
-    m_header = x.m_header;
-    m_segments = x.m_segments;
+    m_object_name = x.m_object_name;
+    m_segment_x = x.m_segment_x;
+    m_segment_y = x.m_segment_y;
+    m_segment_z = x.m_segment_z;
 
     return *this;
 }
@@ -77,8 +89,10 @@ idl_msg::MocapSegments_msg& idl_msg::MocapSegments_msg::operator =(
         MocapSegments_msg&& x)
 {
 
-    m_header = std::move(x.m_header);
-    m_segments = std::move(x.m_segments);
+    m_object_name = std::move(x.m_object_name);
+    m_segment_x = std::move(x.m_segment_x);
+    m_segment_y = std::move(x.m_segment_y);
+    m_segment_z = std::move(x.m_segment_z);
 
     return *this;
 }
@@ -87,7 +101,7 @@ bool idl_msg::MocapSegments_msg::operator ==(
         const MocapSegments_msg& x)
 {
 
-    return (m_header == x.m_header && m_segments == x.m_segments);
+    return (m_object_name == x.m_object_name && m_segment_x == x.m_segment_x && m_segment_y == x.m_segment_y && m_segment_z == x.m_segment_z);
 }
 
 bool idl_msg::MocapSegments_msg::operator !=(
@@ -102,11 +116,17 @@ size_t idl_msg::MocapSegments_msg::getMaxCdrSerializedSize(
     size_t initial_alignment = current_alignment;
 
 
-    current_alignment += idl_msg::Header_msg::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4) + 255 + 1;
 
-    for(size_t a = 0; a < (10); ++a)
-    {
-        current_alignment += idl_msg::Vector3f_msg::getMaxCdrSerializedSize(current_alignment);}
+    current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
 
     return current_alignment - initial_alignment;
 }
@@ -119,12 +139,23 @@ size_t idl_msg::MocapSegments_msg::getCdrSerializedSize(
     size_t initial_alignment = current_alignment;
 
 
-    current_alignment += idl_msg::Header_msg::getCdrSerializedSize(data.header(), current_alignment);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4) + data.object_name().size() + 1;
 
-    for(size_t a = 0; a < data.segments().size(); ++a)
+    if ((10) > 0)
     {
-            current_alignment += idl_msg::Vector3f_msg::getCdrSerializedSize(data.segments().at(a), current_alignment);
+        current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
     }
+
+    if ((10) > 0)
+    {
+        current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    }
+
+    if ((10) > 0)
+    {
+        current_alignment += ((10) * 4) + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+    }
+
 
     return current_alignment - initial_alignment;
 }
@@ -133,8 +164,12 @@ void idl_msg::MocapSegments_msg::serialize(
         eprosima::fastcdr::Cdr& scdr) const
 {
 
-    scdr << m_header;
-    scdr << m_segments;
+    scdr << m_object_name;
+    scdr << m_segment_x;
+
+    scdr << m_segment_y;
+
+    scdr << m_segment_z;
 
 
 }
@@ -143,90 +178,170 @@ void idl_msg::MocapSegments_msg::deserialize(
         eprosima::fastcdr::Cdr& dcdr)
 {
 
-    dcdr >> m_header;
-    dcdr >> m_segments;
+    dcdr >> m_object_name;
+    dcdr >> m_segment_x;
+
+    dcdr >> m_segment_y;
+
+    dcdr >> m_segment_z;
 
 }
 
 /*!
- * @brief This function copies the value in member header
- * @param _header New value to be copied in member header
+ * @brief This function copies the value in member object_name
+ * @param _object_name New value to be copied in member object_name
  */
-void idl_msg::MocapSegments_msg::header(
-        const idl_msg::Header_msg& _header)
+void idl_msg::MocapSegments_msg::object_name(
+        const std::string& _object_name)
 {
-    m_header = _header;
+    m_object_name = _object_name;
 }
 
 /*!
- * @brief This function moves the value in member header
- * @param _header New value to be moved in member header
+ * @brief This function moves the value in member object_name
+ * @param _object_name New value to be moved in member object_name
  */
-void idl_msg::MocapSegments_msg::header(
-        idl_msg::Header_msg&& _header)
+void idl_msg::MocapSegments_msg::object_name(
+        std::string&& _object_name)
 {
-    m_header = std::move(_header);
+    m_object_name = std::move(_object_name);
 }
 
 /*!
- * @brief This function returns a constant reference to member header
- * @return Constant reference to member header
+ * @brief This function returns a constant reference to member object_name
+ * @return Constant reference to member object_name
  */
-const idl_msg::Header_msg& idl_msg::MocapSegments_msg::header() const
+const std::string& idl_msg::MocapSegments_msg::object_name() const
 {
-    return m_header;
+    return m_object_name;
 }
 
 /*!
- * @brief This function returns a reference to member header
- * @return Reference to member header
+ * @brief This function returns a reference to member object_name
+ * @return Reference to member object_name
  */
-idl_msg::Header_msg& idl_msg::MocapSegments_msg::header()
+std::string& idl_msg::MocapSegments_msg::object_name()
 {
-    return m_header;
+    return m_object_name;
 }
 /*!
- * @brief This function copies the value in member segments
- * @param _segments New value to be copied in member segments
+ * @brief This function copies the value in member segment_x
+ * @param _segment_x New value to be copied in member segment_x
  */
-void idl_msg::MocapSegments_msg::segments(
-        const std::array<idl_msg::Vector3f_msg, 10>& _segments)
+void idl_msg::MocapSegments_msg::segment_x(
+        const std::array<float, 10>& _segment_x)
 {
-    m_segments = _segments;
-}
-
-/*!
- * @brief This function moves the value in member segments
- * @param _segments New value to be moved in member segments
- */
-void idl_msg::MocapSegments_msg::segments(
-        std::array<idl_msg::Vector3f_msg, 10>&& _segments)
-{
-    m_segments = std::move(_segments);
+    m_segment_x = _segment_x;
 }
 
 /*!
- * @brief This function returns a constant reference to member segments
- * @return Constant reference to member segments
+ * @brief This function moves the value in member segment_x
+ * @param _segment_x New value to be moved in member segment_x
  */
-const std::array<idl_msg::Vector3f_msg, 10>& idl_msg::MocapSegments_msg::segments() const
+void idl_msg::MocapSegments_msg::segment_x(
+        std::array<float, 10>&& _segment_x)
 {
-    return m_segments;
+    m_segment_x = std::move(_segment_x);
 }
 
 /*!
- * @brief This function returns a reference to member segments
- * @return Reference to member segments
+ * @brief This function returns a constant reference to member segment_x
+ * @return Constant reference to member segment_x
  */
-std::array<idl_msg::Vector3f_msg, 10>& idl_msg::MocapSegments_msg::segments()
+const std::array<float, 10>& idl_msg::MocapSegments_msg::segment_x() const
 {
-    return m_segments;
+    return m_segment_x;
+}
+
+/*!
+ * @brief This function returns a reference to member segment_x
+ * @return Reference to member segment_x
+ */
+std::array<float, 10>& idl_msg::MocapSegments_msg::segment_x()
+{
+    return m_segment_x;
+}
+/*!
+ * @brief This function copies the value in member segment_y
+ * @param _segment_y New value to be copied in member segment_y
+ */
+void idl_msg::MocapSegments_msg::segment_y(
+        const std::array<float, 10>& _segment_y)
+{
+    m_segment_y = _segment_y;
+}
+
+/*!
+ * @brief This function moves the value in member segment_y
+ * @param _segment_y New value to be moved in member segment_y
+ */
+void idl_msg::MocapSegments_msg::segment_y(
+        std::array<float, 10>&& _segment_y)
+{
+    m_segment_y = std::move(_segment_y);
+}
+
+/*!
+ * @brief This function returns a constant reference to member segment_y
+ * @return Constant reference to member segment_y
+ */
+const std::array<float, 10>& idl_msg::MocapSegments_msg::segment_y() const
+{
+    return m_segment_y;
+}
+
+/*!
+ * @brief This function returns a reference to member segment_y
+ * @return Reference to member segment_y
+ */
+std::array<float, 10>& idl_msg::MocapSegments_msg::segment_y()
+{
+    return m_segment_y;
+}
+/*!
+ * @brief This function copies the value in member segment_z
+ * @param _segment_z New value to be copied in member segment_z
+ */
+void idl_msg::MocapSegments_msg::segment_z(
+        const std::array<float, 10>& _segment_z)
+{
+    m_segment_z = _segment_z;
+}
+
+/*!
+ * @brief This function moves the value in member segment_z
+ * @param _segment_z New value to be moved in member segment_z
+ */
+void idl_msg::MocapSegments_msg::segment_z(
+        std::array<float, 10>&& _segment_z)
+{
+    m_segment_z = std::move(_segment_z);
+}
+
+/*!
+ * @brief This function returns a constant reference to member segment_z
+ * @return Constant reference to member segment_z
+ */
+const std::array<float, 10>& idl_msg::MocapSegments_msg::segment_z() const
+{
+    return m_segment_z;
+}
+
+/*!
+ * @brief This function returns a reference to member segment_z
+ * @return Reference to member segment_z
+ */
+std::array<float, 10>& idl_msg::MocapSegments_msg::segment_z()
+{
+    return m_segment_z;
 }
 
 size_t idl_msg::MocapSegments_msg::getKeyMaxCdrSerializedSize(
         size_t current_alignment)
 {
     size_t current_align = current_alignment;
+
+
 
 
 
@@ -244,6 +359,6 @@ void idl_msg::MocapSegments_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-      
+        
 }
 

@@ -36,13 +36,13 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Quaternion_msg::Quaternion_msg()
 {
-    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@60d8c9b7
+    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@65466a6a
     m_x = 0.0;
-    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@48aaecc3
+    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4ddced80
     m_y = 0.0;
-    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7c0c77c7
+    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1534f01b
     m_z = 0.0;
-    // m_w com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7adda9cc
+    // m_w com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78e117e3
     m_w = 0.0;
 
 }
