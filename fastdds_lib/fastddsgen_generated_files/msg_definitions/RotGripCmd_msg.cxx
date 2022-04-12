@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::RotGripCmd_msg::RotGripCmd_msg()
 {
-    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e802ef9
+    // m_front_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78b66d36
     m_front_arm_deg = 0;
-    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2b6faea6
+    // m_back_arm_deg com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5223e5ee
     m_back_arm_deg = 0;
-    // m_trigger_gripper com.eprosima.idl.parser.typecode.PrimitiveTypeCode@778d1062
+    // m_trigger_gripper com.eprosima.idl.parser.typecode.PrimitiveTypeCode@bef2d72
     m_trigger_gripper = false;
 
 }
