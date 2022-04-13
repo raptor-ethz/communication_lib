@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadVelCmd_msg::QuadVelCmd_msg()
 {
-    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@7ee955a8
+    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@4313f5bc
 
-    // m_velocity com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@6ac13091
+    // m_velocity com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@7f010382
 
-    // m_yaw_rate com.eprosima.idl.parser.typecode.PrimitiveTypeCode@5e316c74
+    // m_yaw_rate com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1e802ef9
     m_yaw_rate = 0.0;
 
 }

@@ -38,11 +38,13 @@ idl_msg::Mocap_msg::Mocap_msg()
 {
     // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@1e67a849
 
-    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@57d5872c
+    // m_occluded com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57d5872c
+    m_occluded = false;
+    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@157632c9
 
-    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@157632c9
+    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@6ee12bac
 
-    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6ee12bac
+    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55040f2f
     m_latency = 0.0;
 
 }
@@ -53,12 +55,14 @@ idl_msg::Mocap_msg::~Mocap_msg()
 
 
 
+
 }
 
 idl_msg::Mocap_msg::Mocap_msg(
         const Mocap_msg& x)
 {
     m_header = x.m_header;
+    m_occluded = x.m_occluded;
     m_position = x.m_position;
     m_orientation = x.m_orientation;
     m_latency = x.m_latency;
@@ -68,6 +72,7 @@ idl_msg::Mocap_msg::Mocap_msg(
         Mocap_msg&& x)
 {
     m_header = std::move(x.m_header);
+    m_occluded = x.m_occluded;
     m_position = std::move(x.m_position);
     m_orientation = std::move(x.m_orientation);
     m_latency = x.m_latency;
@@ -78,6 +83,7 @@ idl_msg::Mocap_msg& idl_msg::Mocap_msg::operator =(
 {
 
     m_header = x.m_header;
+    m_occluded = x.m_occluded;
     m_position = x.m_position;
     m_orientation = x.m_orientation;
     m_latency = x.m_latency;
@@ -90,6 +96,7 @@ idl_msg::Mocap_msg& idl_msg::Mocap_msg::operator =(
 {
 
     m_header = std::move(x.m_header);
+    m_occluded = x.m_occluded;
     m_position = std::move(x.m_position);
     m_orientation = std::move(x.m_orientation);
     m_latency = x.m_latency;
@@ -101,7 +108,7 @@ bool idl_msg::Mocap_msg::operator ==(
         const Mocap_msg& x)
 {
 
-    return (m_header == x.m_header && m_position == x.m_position && m_orientation == x.m_orientation && m_latency == x.m_latency);
+    return (m_header == x.m_header && m_occluded == x.m_occluded && m_position == x.m_position && m_orientation == x.m_orientation && m_latency == x.m_latency);
 }
 
 bool idl_msg::Mocap_msg::operator !=(
@@ -117,6 +124,9 @@ size_t idl_msg::Mocap_msg::getMaxCdrSerializedSize(
 
 
     current_alignment += idl_msg::Header_msg::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
     current_alignment += idl_msg::Vector3f_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += idl_msg::Euler_angle_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -135,6 +145,9 @@ size_t idl_msg::Mocap_msg::getCdrSerializedSize(
 
 
     current_alignment += idl_msg::Header_msg::getCdrSerializedSize(data.header(), current_alignment);
+    current_alignment += 1 + eprosima::fastcdr::Cdr::alignment(current_alignment, 1);
+
+
     current_alignment += idl_msg::Vector3f_msg::getCdrSerializedSize(data.position(), current_alignment);
     current_alignment += idl_msg::Euler_angle_msg::getCdrSerializedSize(data.orientation(), current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
@@ -149,6 +162,7 @@ void idl_msg::Mocap_msg::serialize(
 {
 
     scdr << m_header;
+    scdr << m_occluded;
     scdr << m_position;
     scdr << m_orientation;
     scdr << m_latency;
@@ -160,6 +174,7 @@ void idl_msg::Mocap_msg::deserialize(
 {
 
     dcdr >> m_header;
+    dcdr >> m_occluded;
     dcdr >> m_position;
     dcdr >> m_orientation;
     dcdr >> m_latency;
@@ -202,6 +217,34 @@ idl_msg::Header_msg& idl_msg::Mocap_msg::header()
 {
     return m_header;
 }
+/*!
+ * @brief This function sets a value in member occluded
+ * @param _occluded New value for member occluded
+ */
+void idl_msg::Mocap_msg::occluded(
+        bool _occluded)
+{
+    m_occluded = _occluded;
+}
+
+/*!
+ * @brief This function returns the value of member occluded
+ * @return Value of member occluded
+ */
+bool idl_msg::Mocap_msg::occluded() const
+{
+    return m_occluded;
+}
+
+/*!
+ * @brief This function returns a reference to member occluded
+ * @return Reference to member occluded
+ */
+bool& idl_msg::Mocap_msg::occluded()
+{
+    return m_occluded;
+}
+
 /*!
  * @brief This function copies the value in member position
  * @param _position New value to be copied in member position
@@ -316,6 +359,7 @@ size_t idl_msg::Mocap_msg::getKeyMaxCdrSerializedSize(
 
 
 
+
     return current_align;
 }
 
@@ -328,6 +372,6 @@ void idl_msg::Mocap_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-        
+         
 }
 

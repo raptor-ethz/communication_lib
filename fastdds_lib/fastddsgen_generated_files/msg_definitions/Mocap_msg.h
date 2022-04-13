@@ -151,6 +151,25 @@ namespace idl_msg {
          */
         eProsima_user_DllExport idl_msg::Header_msg& header();
         /*!
+         * @brief This function sets a value in member occluded
+         * @param _occluded New value for member occluded
+         */
+        eProsima_user_DllExport void occluded(
+                bool _occluded);
+
+        /*!
+         * @brief This function returns the value of member occluded
+         * @return Value of member occluded
+         */
+        eProsima_user_DllExport bool occluded() const;
+
+        /*!
+         * @brief This function returns a reference to member occluded
+         * @return Reference to member occluded
+         */
+        eProsima_user_DllExport bool& occluded();
+
+        /*!
          * @brief This function copies the value in member position
          * @param _position New value to be copied in member position
          */
@@ -280,6 +299,7 @@ namespace idl_msg {
     private:
 
         idl_msg::Header_msg m_header;
+        bool m_occluded;
         idl_msg::Vector3f_msg m_position;
         idl_msg::Euler_angle_msg m_orientation;
         float m_latency;
