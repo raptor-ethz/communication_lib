@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Vector3i_msg::Vector3i_msg()
 {
-    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@62150f9e
+    // m_x com.eprosima.idl.parser.typecode.PrimitiveTypeCode@14dd9eb7
     m_x = 0;
-    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1a451d4d
+    // m_y com.eprosima.idl.parser.typecode.PrimitiveTypeCode@52e6fdee
     m_y = 0;
-    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@7fa98a66
+    // m_z com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6c80d78a
     m_z = 0;
 
 }

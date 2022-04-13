@@ -36,15 +36,17 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::Mocap_msg::Mocap_msg()
 {
-    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@1e67a849
+    // m_header com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@7f9fcf7f
 
-    // m_occluded com.eprosima.idl.parser.typecode.PrimitiveTypeCode@57d5872c
+    // m_occluded com.eprosima.idl.parser.typecode.PrimitiveTypeCode@2357d90a
     m_occluded = false;
-    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@157632c9
+    // m_position com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@15bb6bea
 
-    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@6ee12bac
+    // m_orientation com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@8b96fde
 
-    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@55040f2f
+    // m_quaternion com.eprosima.fastdds.idl.parser.typecode.StructTypeCode@2d2e5f00
+
+    // m_latency com.eprosima.idl.parser.typecode.PrimitiveTypeCode@4c40b76e
     m_latency = 0.0;
 
 }
@@ -56,6 +58,7 @@ idl_msg::Mocap_msg::~Mocap_msg()
 
 
 
+
 }
 
 idl_msg::Mocap_msg::Mocap_msg(
@@ -65,6 +68,7 @@ idl_msg::Mocap_msg::Mocap_msg(
     m_occluded = x.m_occluded;
     m_position = x.m_position;
     m_orientation = x.m_orientation;
+    m_quaternion = x.m_quaternion;
     m_latency = x.m_latency;
 }
 
@@ -75,6 +79,7 @@ idl_msg::Mocap_msg::Mocap_msg(
     m_occluded = x.m_occluded;
     m_position = std::move(x.m_position);
     m_orientation = std::move(x.m_orientation);
+    m_quaternion = std::move(x.m_quaternion);
     m_latency = x.m_latency;
 }
 
@@ -86,6 +91,7 @@ idl_msg::Mocap_msg& idl_msg::Mocap_msg::operator =(
     m_occluded = x.m_occluded;
     m_position = x.m_position;
     m_orientation = x.m_orientation;
+    m_quaternion = x.m_quaternion;
     m_latency = x.m_latency;
 
     return *this;
@@ -99,6 +105,7 @@ idl_msg::Mocap_msg& idl_msg::Mocap_msg::operator =(
     m_occluded = x.m_occluded;
     m_position = std::move(x.m_position);
     m_orientation = std::move(x.m_orientation);
+    m_quaternion = std::move(x.m_quaternion);
     m_latency = x.m_latency;
 
     return *this;
@@ -108,7 +115,7 @@ bool idl_msg::Mocap_msg::operator ==(
         const Mocap_msg& x)
 {
 
-    return (m_header == x.m_header && m_occluded == x.m_occluded && m_position == x.m_position && m_orientation == x.m_orientation && m_latency == x.m_latency);
+    return (m_header == x.m_header && m_occluded == x.m_occluded && m_position == x.m_position && m_orientation == x.m_orientation && m_quaternion == x.m_quaternion && m_latency == x.m_latency);
 }
 
 bool idl_msg::Mocap_msg::operator !=(
@@ -129,6 +136,7 @@ size_t idl_msg::Mocap_msg::getMaxCdrSerializedSize(
 
     current_alignment += idl_msg::Vector3f_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += idl_msg::Euler_angle_msg::getMaxCdrSerializedSize(current_alignment);
+    current_alignment += idl_msg::Quaternion_msg::getMaxCdrSerializedSize(current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -150,6 +158,7 @@ size_t idl_msg::Mocap_msg::getCdrSerializedSize(
 
     current_alignment += idl_msg::Vector3f_msg::getCdrSerializedSize(data.position(), current_alignment);
     current_alignment += idl_msg::Euler_angle_msg::getCdrSerializedSize(data.orientation(), current_alignment);
+    current_alignment += idl_msg::Quaternion_msg::getCdrSerializedSize(data.quaternion(), current_alignment);
     current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
 
 
@@ -165,6 +174,7 @@ void idl_msg::Mocap_msg::serialize(
     scdr << m_occluded;
     scdr << m_position;
     scdr << m_orientation;
+    scdr << m_quaternion;
     scdr << m_latency;
 
 }
@@ -177,6 +187,7 @@ void idl_msg::Mocap_msg::deserialize(
     dcdr >> m_occluded;
     dcdr >> m_position;
     dcdr >> m_orientation;
+    dcdr >> m_quaternion;
     dcdr >> m_latency;
 }
 
@@ -320,6 +331,43 @@ idl_msg::Euler_angle_msg& idl_msg::Mocap_msg::orientation()
     return m_orientation;
 }
 /*!
+ * @brief This function copies the value in member quaternion
+ * @param _quaternion New value to be copied in member quaternion
+ */
+void idl_msg::Mocap_msg::quaternion(
+        const idl_msg::Quaternion_msg& _quaternion)
+{
+    m_quaternion = _quaternion;
+}
+
+/*!
+ * @brief This function moves the value in member quaternion
+ * @param _quaternion New value to be moved in member quaternion
+ */
+void idl_msg::Mocap_msg::quaternion(
+        idl_msg::Quaternion_msg&& _quaternion)
+{
+    m_quaternion = std::move(_quaternion);
+}
+
+/*!
+ * @brief This function returns a constant reference to member quaternion
+ * @return Constant reference to member quaternion
+ */
+const idl_msg::Quaternion_msg& idl_msg::Mocap_msg::quaternion() const
+{
+    return m_quaternion;
+}
+
+/*!
+ * @brief This function returns a reference to member quaternion
+ * @return Reference to member quaternion
+ */
+idl_msg::Quaternion_msg& idl_msg::Mocap_msg::quaternion()
+{
+    return m_quaternion;
+}
+/*!
  * @brief This function sets a value in member latency
  * @param _latency New value for member latency
  */
@@ -360,6 +408,7 @@ size_t idl_msg::Mocap_msg::getKeyMaxCdrSerializedSize(
 
 
 
+
     return current_align;
 }
 
@@ -372,6 +421,6 @@ void idl_msg::Mocap_msg::serializeKey(
         eprosima::fastcdr::Cdr& scdr) const
 {
     (void) scdr;
-         
+          
 }
 

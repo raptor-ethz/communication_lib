@@ -24,6 +24,7 @@
 
 #include "Euler_angle_msg.h"
 #include "Vector3f_msg.h"
+#include "Quaternion_msg.h"
 #include "Header_msg.h"
 
 #include <stdint.h>
@@ -220,6 +221,31 @@ namespace idl_msg {
          */
         eProsima_user_DllExport idl_msg::Euler_angle_msg& orientation();
         /*!
+         * @brief This function copies the value in member quaternion
+         * @param _quaternion New value to be copied in member quaternion
+         */
+        eProsima_user_DllExport void quaternion(
+                const idl_msg::Quaternion_msg& _quaternion);
+
+        /*!
+         * @brief This function moves the value in member quaternion
+         * @param _quaternion New value to be moved in member quaternion
+         */
+        eProsima_user_DllExport void quaternion(
+                idl_msg::Quaternion_msg&& _quaternion);
+
+        /*!
+         * @brief This function returns a constant reference to member quaternion
+         * @return Constant reference to member quaternion
+         */
+        eProsima_user_DllExport const idl_msg::Quaternion_msg& quaternion() const;
+
+        /*!
+         * @brief This function returns a reference to member quaternion
+         * @return Reference to member quaternion
+         */
+        eProsima_user_DllExport idl_msg::Quaternion_msg& quaternion();
+        /*!
          * @brief This function sets a value in member latency
          * @param _latency New value for member latency
          */
@@ -302,6 +328,7 @@ namespace idl_msg {
         bool m_occluded;
         idl_msg::Vector3f_msg m_position;
         idl_msg::Euler_angle_msg m_orientation;
+        idl_msg::Quaternion_msg m_quaternion;
         float m_latency;
     };
 } // namespace idl_msg

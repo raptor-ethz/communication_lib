@@ -36,17 +36,17 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::MocapMarker_msg::MocapMarker_msg()
 {
-    // m_header com.eprosima.idl.parser.typecode.StringTypeCode@16aa0a0a
+    // m_header com.eprosima.idl.parser.typecode.StringTypeCode@5af97850
     m_header ="";
-    // m_length com.eprosima.idl.parser.typecode.PrimitiveTypeCode@50a7bc6e
+    // m_length com.eprosima.idl.parser.typecode.PrimitiveTypeCode@16aa0a0a
     m_length = 0;
-    // m_occluded com.eprosima.idl.parser.typecode.ArrayTypeCode@161b062a
+    // m_occluded com.eprosima.idl.parser.typecode.ArrayTypeCode@780cb77
     memset(&m_occluded, 0, (10) * 1);
-    // m_marker_x com.eprosima.idl.parser.typecode.ArrayTypeCode@17c1bced
+    // m_marker_x com.eprosima.idl.parser.typecode.ArrayTypeCode@691a7f8f
     memset(&m_marker_x, 0, (10) * 4);
-    // m_marker_y com.eprosima.idl.parser.typecode.ArrayTypeCode@2d9d4f9d
+    // m_marker_y com.eprosima.idl.parser.typecode.ArrayTypeCode@50a7bc6e
     memset(&m_marker_y, 0, (10) * 4);
-    // m_marker_z com.eprosima.idl.parser.typecode.ArrayTypeCode@4034c28c
+    // m_marker_z com.eprosima.idl.parser.typecode.ArrayTypeCode@161b062a
     memset(&m_marker_z, 0, (10) * 4);
 
 }
