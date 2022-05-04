@@ -36,11 +36,11 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::QuadStatus_msg::QuadStatus_msg()
 {
-    // m_battery com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b26e945
+    // m_battery com.eprosima.idl.parser.typecode.PrimitiveTypeCode@1f0f1111
     m_battery = 0;
-    // m_armable com.eprosima.idl.parser.typecode.PrimitiveTypeCode@63a65a25
+    // m_armable com.eprosima.idl.parser.typecode.PrimitiveTypeCode@49c386c8
     m_armable = false;
-    // m_local_position_ok com.eprosima.idl.parser.typecode.PrimitiveTypeCode@54c562f7
+    // m_local_position_ok com.eprosima.idl.parser.typecode.PrimitiveTypeCode@56528192
     m_local_position_ok = false;
 
 }

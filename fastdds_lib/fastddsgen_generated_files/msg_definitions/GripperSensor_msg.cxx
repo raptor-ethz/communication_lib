@@ -36,13 +36,13 @@ using namespace eprosima::fastcdr::exception;
 
 idl_msg::GripperSensor_msg::GripperSensor_msg()
 {
-    // m_force_front_left com.eprosima.idl.parser.typecode.PrimitiveTypeCode@710726a3
+    // m_force_front_left com.eprosima.idl.parser.typecode.PrimitiveTypeCode@dd3b207
     m_force_front_left = 0;
-    // m_force_front_right com.eprosima.idl.parser.typecode.PrimitiveTypeCode@78186a70
+    // m_force_front_right com.eprosima.idl.parser.typecode.PrimitiveTypeCode@551bdc27
     m_force_front_right = 0;
-    // m_force_back_left com.eprosima.idl.parser.typecode.PrimitiveTypeCode@306279ee
+    // m_force_back_left com.eprosima.idl.parser.typecode.PrimitiveTypeCode@58fdd99
     m_force_back_left = 0;
-    // m_force_back_right com.eprosima.idl.parser.typecode.PrimitiveTypeCode@545997b1
+    // m_force_back_right com.eprosima.idl.parser.typecode.PrimitiveTypeCode@6b1274d2
     m_force_back_right = 0;
 
 }
